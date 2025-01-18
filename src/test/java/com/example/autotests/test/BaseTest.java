@@ -5,7 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import java.time.Duration;
-import static com.example.autotests.AuthorizationTests.URL;
+
+import static com.example.autotests.test.AuthorizationTests.URL;
+
 
 /**
  * Базовый класс для всех тестов.

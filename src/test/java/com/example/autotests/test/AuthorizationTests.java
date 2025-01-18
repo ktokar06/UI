@@ -1,8 +1,7 @@
-package com.example.autotests;
+package com.example.autotests.test;
 
 import com.example.autotests.pages.HomePage;
 import com.example.autotests.pages.LoginPage;
-import com.example.autotests.test.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
