@@ -19,7 +19,7 @@ public class BaseTest {
     /**
      * Веб-драйвер, который используется для управления браузером и выполнения действий на страницах.
      */
-    protected WebDriver driver;
+    public WebDriver driver;
 
     /**
      * Метод, выполняемый перед каждым тестовым методом.
@@ -27,6 +27,7 @@ public class BaseTest {
      * Создаёт новый экземпляр веб-драйвера, максимизирует окно браузера и устанавливает время ожидания для поиска элементов.
      */
     @BeforeMethod
+
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();

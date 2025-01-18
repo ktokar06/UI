@@ -2,6 +2,7 @@ package com.example.autotests.test;
 
 import com.example.autotests.pages.HomePage;
 import com.example.autotests.pages.LoginPage;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -24,7 +25,11 @@ public class AuthorizationTests extends BaseTest {
     /**
      * Тест для проверки видимости полей.
      */
-    @Test(description = "Проверка полей")
+    @Epic("Смоук тестирование")
+    @Feature("Видимость")
+    @Story("Проверка видимости полей")
+    @Severity(SeverityLevel.BLOCKER)
+    @Test
     public void visibilityCheck() {
         LoginPage loginPage = new LoginPage(driver);
 
@@ -34,9 +39,13 @@ public class AuthorizationTests extends BaseTest {
     }
 
     /**
-     * Тест для проверки входа с неправильными данными.
+     * Тест для проверки входа с правильными данными.
      */
-    @Test(description = "Проверка на правильные данные")
+    @Epic("Смоук тестирование")
+    @Feature("Вход")
+    @Story("Вход с правильными данными")
+    @Severity(SeverityLevel.BLOCKER)
+    @Test
     public void validCredentialsTest() {;
         LoginPage loginPage = new LoginPage(driver);
 
@@ -49,9 +58,13 @@ public class AuthorizationTests extends BaseTest {
     }
 
     /**
-     * Тест для проверки выхода после успешного входа в аккаунт.
+     * Тест для проверки входа с неправильными данными.
      */
-    @Test(description = "Проверка на неправильные данные")
+    @Epic("Смоук тестирование")
+    @Feature("Вход")
+    @Story("Вход с неправильными данными")
+    @Severity(SeverityLevel.BLOCKER)
+    @Test
     public void invalidCredentialsTest() {
         LoginPage loginPage = new LoginPage(driver);
 
@@ -66,7 +79,11 @@ public class AuthorizationTests extends BaseTest {
     /**
      * Тест для проверка Выхода после Входа в аккаунт.
      */
-    @Test(description = "Проверка Выхода после Входа в аккаунт")
+    @Epic("Смоук тестирование")
+    @Feature("Выход")
+    @Story("Выход после Входа в аккаунт")
+    @Severity(SeverityLevel.BLOCKER)
+    @Test
     public void logoutAfterLoginTest() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.setUsername(VALID_USERNAME);

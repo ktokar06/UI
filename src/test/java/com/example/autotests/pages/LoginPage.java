@@ -1,6 +1,7 @@
 package com.example.autotests.pages;
 
 import com.example.autotests.util.WaitUtils;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,6 +40,7 @@ public class LoginPage extends BasePage{
      *
      * @param driver экземпляр веб-драйвера, необходимый для взаимодействия со страницей
      */
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -48,19 +50,10 @@ public class LoginPage extends BasePage{
      *
      * @param username имя пользователя для ввода
      */
+    @Step("Заполняет поле 'Имя' значением {password}")
     public void setUsername(String username) {
         this.username.clear();
         this.username.sendKeys(username);
-    }
-
-    /**
-     * Устанавливает описание имени пользователя в соответствующее поле.
-     *
-     * @param description описание имени пользователя для ввода
-     */
-    public void setUsernameDescription(String description) {
-        this.usernameDescription.clear();
-        this.usernameDescription.sendKeys(description);
     }
 
     /**
@@ -68,16 +61,29 @@ public class LoginPage extends BasePage{
      *
      * @param password пароль для ввода
      */
+    @Step("Заполняет поле 'Пароль' значением {password}")
     public void setPassword(String password) {
         this.password.clear();
         this.password.sendKeys(password);
     }
 
     /**
+     * Устанавливает описание имени пользователя в соответствующее поле.
+     *
+     * @param description описание имени пользователя для ввода
+     */
+    @Step("Заполняет поле 'Описание пользователя' значением {description}")
+    public void setUsernameDescription(String description) {
+        this.usernameDescription.clear();
+        this.usernameDescription.sendKeys(description);
+    }
+
+    /**
      * Нажимает кнопку для отправки формы входа.
      */
+    @Step("Нажимает кнопку под названием 'Login'")
     public void clickLoginButton() {
-        submitButton.click();
+        this.submitButton.click();
     }
 
     /**
@@ -86,6 +92,7 @@ public class LoginPage extends BasePage{
      * @param driver экземпляр веб-драйвера, необходимый для проверки состояния страницы
      * @return true, если пользователь успешно вошёл в систему, иначе false
      */
+    @Step(value = "Проверяет, выполнен ли успешный вход в систему")
     public boolean isLoggedIn(WebDriver driver) {
         return WaitUtils.waitForElementPresence(driver);
     }

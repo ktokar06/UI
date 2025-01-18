@@ -15,7 +15,7 @@ public abstract class BasePage {
     /**
      * Веб-драйвер, который используется для управления браузером и выполнения действий на страницах.
      */
-    protected WebDriver driver;
+    public WebDriver driver;
 
     /**
      * Конструктор страницы, инициализирующий элементы страницы.
