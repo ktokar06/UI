@@ -1,6 +1,5 @@
 package com.example.autotests.pages;
 
-import com.example.autotests.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Страница главной страницы веб-приложения.
  */
-public class HomePage extends BasePage {
+public class HomePage extends BasePage{
 
     /**
      * Элемент ссылки для выхода из системы.
@@ -23,8 +22,7 @@ public class HomePage extends BasePage {
      * @param driver экземпляр веб-драйвера, необходимый для взаимодействия со страницей
      */
     public HomePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     /**

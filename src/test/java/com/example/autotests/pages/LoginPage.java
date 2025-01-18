@@ -1,16 +1,14 @@
 package com.example.autotests.pages;
 
-import com.example.autotests.base.BasePage;
 import com.example.autotests.util.WaitUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 /**
  * Класс, представляющий страницу входа в веб-приложение.
  */
-public class LoginPage extends BasePage {
+public class LoginPage extends BasePage{
 
     /**
      * Поле для ввода имени пользователя.
@@ -42,8 +40,7 @@ public class LoginPage extends BasePage {
      * @param driver экземпляр веб-драйвера, необходимый для взаимодействия со страницей
      */
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     /**
@@ -90,6 +87,6 @@ public class LoginPage extends BasePage {
      * @return true, если пользователь успешно вошёл в систему, иначе false
      */
     public boolean isLoggedIn(WebDriver driver) {
-        return WaitUtils.waitUtils;
+        return WaitUtils.waitForElementPresence(driver);
     }
 }
