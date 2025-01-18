@@ -3,6 +3,7 @@ package com.example.autotests.test;
 import com.example.autotests.pages.HomePage;
 import com.example.autotests.pages.LoginPage;
 import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,11 +26,15 @@ public class AuthorizationTests extends BaseTest {
     /**
      * Тест для проверки видимости полей.
      */
+    @Test
+    @Issue("1")
+    @Link
+    @Owner("Kirill")
+    @DisplayName("Test")
     @Epic("Смоук тестирование")
     @Feature("Видимость")
     @Story("Проверка видимости полей")
     @Severity(SeverityLevel.BLOCKER)
-    @Test
     public void visibilityCheck() {
         LoginPage loginPage = new LoginPage(driver);
 
@@ -41,11 +46,15 @@ public class AuthorizationTests extends BaseTest {
     /**
      * Тест для проверки входа с правильными данными.
      */
+    @Test
+    @Issue("1")
+    @Link
+    @Owner("Kirill")
+    @DisplayName("Test")
     @Epic("Смоук тестирование")
     @Feature("Вход")
     @Story("Вход с правильными данными")
     @Severity(SeverityLevel.BLOCKER)
-    @Test
     public void validCredentialsTest() {;
         LoginPage loginPage = new LoginPage(driver);
 
@@ -60,11 +69,15 @@ public class AuthorizationTests extends BaseTest {
     /**
      * Тест для проверки входа с неправильными данными.
      */
+    @Test
+    @Issue("1")
+    @Link
+    @Owner("Kirill")
+    @DisplayName("Test")
     @Epic("Смоук тестирование")
     @Feature("Вход")
     @Story("Вход с неправильными данными")
     @Severity(SeverityLevel.BLOCKER)
-    @Test
     public void invalidCredentialsTest() {
         LoginPage loginPage = new LoginPage(driver);
 
@@ -79,11 +92,15 @@ public class AuthorizationTests extends BaseTest {
     /**
      * Тест для проверка Выхода после Входа в аккаунт.
      */
+    @Test
+    @Issue("1")
+    @Link
+    @Owner("Kirill")
+    @DisplayName("Test")
     @Epic("Смоук тестирование")
     @Feature("Выход")
     @Story("Выход после Входа в аккаунт")
     @Severity(SeverityLevel.BLOCKER)
-    @Test
     public void logoutAfterLoginTest() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.setUsername(VALID_USERNAME);
