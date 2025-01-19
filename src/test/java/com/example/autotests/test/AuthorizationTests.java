@@ -3,7 +3,6 @@ package com.example.autotests.test;
 import com.example.autotests.pages.HomePage;
 import com.example.autotests.pages.LoginPage;
 import io.qameta.allure.*;
-import jdk.jfr.Category;
 import org.junit.jupiter.api.DisplayName;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -29,8 +28,8 @@ public class AuthorizationTests extends BaseTest {
      */
     @Test
     @Issue("1")
-    @Link(name = "Ссылка на баг", value = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Kirill")
+    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
+    @Owner("Tokar Kirill")
     @DisplayName("Проверка видимости полей")
     @Epic("Смоук тестирование")
     @Feature("Видимость")
@@ -49,14 +48,14 @@ public class AuthorizationTests extends BaseTest {
      */
     @Test
     @Issue("2")
-    @Link(name = "Ссылка на баг", value = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Kirill")
+    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
+    @Owner("Tokar Kirill")
     @DisplayName("Вход с правильными данными")
     @Epic("Смоук тестирование")
     @Feature("Вход")
     @Story("Вход с правильными данными")
     @Severity(SeverityLevel.BLOCKER)
-    public void validCredentialsTest() {;
+    public void validCredentialsTest() {
         LoginPage loginPage = new LoginPage(getDriver());
 
         loginPage.setUsername(VALID_USERNAME);
@@ -72,8 +71,8 @@ public class AuthorizationTests extends BaseTest {
      */
     @Test
     @Issue("3")
-    @Link(name = "Ссылка на баг", value = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Kirill")
+    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
+    @Owner("Tokar Kirill")
     @DisplayName("Вход с неправильными данными")
     @Epic("Смоук тестирование")
     @Feature("Вход")
@@ -95,8 +94,8 @@ public class AuthorizationTests extends BaseTest {
      */
     @Test
     @Issue("4")
-    @Link(name = "Ссылка на баг", value = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Kirill")
+    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
+    @Owner("Tokar Kirill")
     @DisplayName("Выход после входа в аккаунт")
     @Epic("Смоук тестирование")
     @Feature("Выход")
