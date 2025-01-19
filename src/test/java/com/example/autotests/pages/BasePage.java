@@ -14,15 +14,33 @@ public abstract class BasePage {
     /**
      * Веб-драйвер, который используется для управления браузером и выполнения действий на страницах.
      */
-    public WebDriver driver;
+    private WebDriver driver;
 
     /**
      * Конструктор страницы, инициализирующий элементы страницы.
      *
-     * @param driver экземпляр веб-драйвера, необходимый для взаимодействия со страницей
+     * @param driver Экземпляр веб-драйвера, необходимый для взаимодействия со страницей.
      */
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+    }
+
+    /**
+     * Получает текущий экземпляр веб-драйвера.
+     *
+     * @return Экземпляр веб-драйвера.
+     */
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    /**
+     * Устанавливает новый экземпляр веб-драйвера.
+     *
+     * @param driver Новый экземпляр веб-драйвера.
+     */
+    public void setDriver(WebDriver driver) {
+        this.driver = driver;
     }
 }

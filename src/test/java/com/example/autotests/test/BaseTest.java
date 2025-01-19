@@ -8,7 +8,6 @@ import java.time.Duration;
 
 import static com.example.autotests.test.AuthorizationTests.URL;
 
-
 /**
  * Базовый класс для всех тестов.
  *
@@ -19,7 +18,7 @@ public class BaseTest {
     /**
      * Веб-драйвер, который используется для управления браузером и выполнения действий на страницах.
      */
-    public WebDriver driver;
+    private WebDriver driver;
 
     /**
      * Метод, выполняемый перед каждым тестовым методом.
@@ -27,7 +26,6 @@ public class BaseTest {
      * Создаёт новый экземпляр веб-драйвера, максимизирует окно браузера и устанавливает время ожидания для поиска элементов.
      */
     @BeforeMethod
-
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -45,5 +43,23 @@ public class BaseTest {
         if (driver != null) {
             driver.quit();
         }
+    }
+
+    /**
+     * Возвращает текущий экземпляр веб-драйвера.
+     *
+     * @return Экземпляр веб-драйвера.
+     */
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    /**
+     * Устанавливает новый экземпляр веб-драйвера.
+     *
+     * @param driver Новый экземпляр веб-драйвера.
+     */
+    public void setDriver(WebDriver driver) {
+        this.driver = driver;
     }
 }

@@ -6,30 +6,39 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Страница главной страницы веб-приложения.
+ * Класс представляет страницу главной страницы веб-приложения.
  */
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
     /**
      * Элемент ссылки для выхода из системы.
      */
     @FindBy(linkText = "Logout")
-    public WebElement logoutLink;
+    private WebElement logoutLink;
 
     /**
      * Конструктор страницы, инициализирующий элементы страницы.
      *
-     * @param driver экземпляр веб-драйвера, необходимый для взаимодействия со страницей
+     * @param driver Экземпляр веб-драйвера, необходимый для взаимодействия со страницей.
      */
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
     /**
-     * Нажимает на ссылку для выхода из системы.
+     * Нажатие на ссылку для выхода из системы.
      */
-    @Step("Нажимает кнопку под названием 'Logout'")
-    public void clickLogout() {
+    @Step("Нажать на кнопку 'Logout'")
+    public void setLogoutLink() {
         this.logoutLink.click();
+    }
+
+    /**
+     * Возвращает элемент ссылки для выхода из системы.
+     *
+     * @return Элемент ссылки для выхода из системы.
+     */
+    public WebElement getLogoutLink() {
+        return logoutLink;
     }
 }
