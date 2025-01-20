@@ -25,4 +25,22 @@ public abstract class BasePage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
+    /**
+     * Получает текущий экземпляр веб-драйвера.
+     *
+     * @return Экземпляр веб-драйвера.
+     */
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    /**
+     * Устанавливает новый экземпляр веб-драйвера.
+     *
+     * @param driver Новый экземпляр веб-драйвера.
+     */
+    public void setDriver(WebDriver driver) {
+        this.driver = driver;
+    }
 }
