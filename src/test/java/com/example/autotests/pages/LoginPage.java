@@ -129,6 +129,6 @@ public class LoginPage extends BasePage {
      */
     @Step("Проверить, выполнен ли успешный вход в систему")
     public boolean isLoggedIn(WebDriver driver) {
-        return WaitUtils.waitForElementPresence(this.getDriver());
+        return WaitUtils.waitForElementPresence(driver);
     }
 }

@@ -31,9 +31,9 @@ public class AuthorizationTests extends BaseTest {
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @Owner("Tokar Kirill")
     @DisplayName("Проверка видимости полей")
-    @Epic("Смоук тестирование")
-    @Feature("Видимость")
-    @Story("Проверка видимости полей")
+    @Epic("Блок - U")
+    @Story("Авторизация")
+    @Feature("Проверка видимости полей")
     @Severity(SeverityLevel.BLOCKER)
     public void visibilityCheck() {
         LoginPage loginPage = new LoginPage(getDriver());
@@ -51,9 +51,9 @@ public class AuthorizationTests extends BaseTest {
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @Owner("Tokar Kirill")
     @DisplayName("Вход с правильными данными")
-    @Epic("Смоук тестирование")
-    @Feature("Вход")
-    @Story("Вход с правильными данными")
+    @Epic("Блок - U")
+    @Story("Авторизация")
+    @Feature("Проверкавхода с правильными данными")
     @Severity(SeverityLevel.BLOCKER)
     public void validCredentialsTest() {
         LoginPage loginPage = new LoginPage(getDriver());
@@ -74,9 +74,9 @@ public class AuthorizationTests extends BaseTest {
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @Owner("Tokar Kirill")
     @DisplayName("Вход с неправильными данными")
-    @Epic("Смоук тестирование")
-    @Feature("Вход")
-    @Story("Вход с неправильными данными")
+    @Epic("Блок - U")
+    @Story("Авторизация")
+    @Feature("Проверкавхода с неправильными данными")
     @Severity(SeverityLevel.BLOCKER)
     public void invalidCredentialsTest() {
         LoginPage loginPage = new LoginPage(getDriver());
@@ -97,9 +97,9 @@ public class AuthorizationTests extends BaseTest {
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @Owner("Tokar Kirill")
     @DisplayName("Выход после входа в аккаунт")
-    @Epic("Смоук тестирование")
-    @Feature("Выход")
-    @Story("Выход после Входа в аккаунт")
+    @Epic("Блок - U")
+    @Story("Авторизация")
+    @Feature("Проверка Выхода после Входа в аккаунт")
     @Severity(SeverityLevel.BLOCKER)
     public void logoutAfterLoginTest() {
         LoginPage loginPage = new LoginPage(getDriver());
