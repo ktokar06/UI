@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
  * Этот класс предоставляет общие методы и свойства,
  * необходимые для работы с различными страницами сайта.
  */
-public class BasePage {
+public abstract class BasePage {
 
     /**
      * Веб-драйвер, который используется для управления браузером и выполнения действий на страницах.
@@ -24,23 +24,5 @@ public class BasePage {
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-    }
-
-    /**
-     * Получает текущий экземпляр веб-драйвера.
-     *
-     * @return Экземпляр веб-драйвера.
-     */
-    public WebDriver getDriver() {
-        return driver;
-    }
-
-    /**
-     * Устанавливает новый экземпляр веб-драйвера.
-     *
-     * @param driver Новый экземпляр веб-драйвера.
-     */
-    public void setDriver(WebDriver driver) {
-        this.driver = driver;
     }
 }
