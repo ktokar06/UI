@@ -53,7 +53,7 @@ public class AuthorizationTests extends BaseTest {
     @DisplayName("Вход с правильными данными")
     @Epic("Блок - U")
     @Story("Авторизация")
-    @Feature("Проверкавхода с правильными данными")
+    @Feature("Проверка входа с правильными данными")
     @Severity(SeverityLevel.BLOCKER)
     public void validCredentialsTest() {
         LoginPage loginPage = new LoginPage(getDriver());
@@ -76,7 +76,7 @@ public class AuthorizationTests extends BaseTest {
     @DisplayName("Вход с неправильными данными")
     @Epic("Блок - U")
     @Story("Авторизация")
-    @Feature("Проверкавхода с неправильными данными")
+    @Feature("Проверка входа с неправильными данными")
     @Severity(SeverityLevel.BLOCKER)
     public void invalidCredentialsTest() {
         LoginPage loginPage = new LoginPage(getDriver());
@@ -99,7 +99,7 @@ public class AuthorizationTests extends BaseTest {
     @DisplayName("Выход после входа в аккаунт")
     @Epic("Блок - U")
     @Story("Авторизация")
-    @Feature("Проверка Выхода после Входа в аккаунт")
+    @Feature("Проверка выхода после входа в аккаунт")
     @Severity(SeverityLevel.BLOCKER)
     public void logoutAfterLoginTest() {
         LoginPage loginPage = new LoginPage(getDriver());
