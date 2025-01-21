@@ -22,7 +22,7 @@ public class DataProviderTest extends BaseTest{
     @DisplayName("")
     @Epic("Блок - U")
     @Story("Авторизация")
-    @Feature("Проверка Входа с разнными данными")
+    @Feature("Проверка авторизации с разнными данными")
     @Severity(SeverityLevel.MINOR)
     public void verifyLoginWithDifferentCredentials(String firstName, String lastName, String usernameDescription) {
         LoginPage loginPage = new LoginPage(getDriver());
