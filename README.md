@@ -1,4 +1,4 @@
-# SimbirSoft
+# 📜 SimbirSoft
 
 ## Задача U0. Настройка окружения
 
