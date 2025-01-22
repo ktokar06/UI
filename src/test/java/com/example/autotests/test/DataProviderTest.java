@@ -19,11 +19,11 @@ public class DataProviderTest extends BaseTest{
     @Issue("5")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @Owner("Tokar Kirill")
-    @DisplayName("")
+    @DisplayName("Проверка авторизации с разными данными")
     @Epic("Блок - U")
     @Story("Авторизация")
     @Feature("Проверка авторизации с разнными данными")
-    @Severity(SeverityLevel.MINOR)
+    @Severity(SeverityLevel.BLOCKER)
     public void verifyLoginWithDifferentCredentials(String firstName, String lastName, String usernameDescription) {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.setUsername(firstName);
