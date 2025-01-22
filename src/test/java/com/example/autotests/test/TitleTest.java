@@ -6,9 +6,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.net.MalformedURLException;
-
-
 /**
  * Класс для проведения тестов главной страницы.
  */
