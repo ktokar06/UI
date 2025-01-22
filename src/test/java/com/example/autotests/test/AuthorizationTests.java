@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
  */
 public class AuthorizationTests extends BaseTest {
 
-    public static final String URL = "https://www.way2automation.com/angularjs-protractor/registeration/#/login";
+    public static final String URL_LOGIN = "https://www.way2automation.com/angularjs-protractor/registeration/#/login";
 
     private static final String VALID_USERNAME = "angular";
     private static final String VALID_PASSWORD = "password";
@@ -35,7 +35,7 @@ public class AuthorizationTests extends BaseTest {
     @Story("Авторизация")
     @Feature("Проверка видимости полей")
     @Severity(SeverityLevel.BLOCKER)
-    public void visibilityCheck() {
+    public void visibilityCheckTest() {
         LoginPage loginPage = new LoginPage(getDriver());
 
         Assert.assertTrue(loginPage.getUsername().isDisplayed());
