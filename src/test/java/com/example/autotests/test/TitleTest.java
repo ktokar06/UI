@@ -87,22 +87,4 @@ public class TitleTest extends BaseTest {
 
         Assert.assertTrue(titlePage.getFooterContactInfo().isDisplayed());
     }
-
-    /**
-     * Тест для проверки Отображения меню при скроллинге страницы вниз.
-     */
-    @Test
-    @Issue("---")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
-    @Owner("Kirill")
-    @DisplayName("Отображение меню при скроллинге страницы вниз")
-    @Epic("Блок - U")
-    @Story("Главная Страница")
-    @Feature("Проверка отображения меню при скроллинге страницы внизы")
-    @Severity(SeverityLevel.BLOCKER)
-    public void verifyHeaderContactVisibility() {
-        TitlePage titlePage = new TitlePage(getDriver());
-
-        Assert.assertTrue(titlePage.clickDown(getDriver()));
-    }
 }

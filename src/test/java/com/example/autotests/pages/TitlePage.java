@@ -288,4 +288,8 @@ public class TitlePage extends BasePage {
     public boolean clickDown(WebDriver driver) {
         return WaitUtils.scrollToDown(driver);
     }
+
+    public boolean checkLifeTime(WebDriver driver) {
+        return WaitUtils.waitForElementPresenceTitle(driver);
+    }
 }
