@@ -37,7 +37,7 @@ public class WaitUtils {
     public static boolean scrollToLeft(WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         try {
-            WebElement coursesContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"post-17\"]/div/div/section[4]")));
+            WebElement coursesContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".swiper-button-prev")));
 
             JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
             javascriptExecutor.executeScript("window.scrollBy(0,500)", coursesContainer);
@@ -57,7 +57,7 @@ public class WaitUtils {
     public static boolean scrollToRight(WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         try {
-            WebElement coursesContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"post-17\"]/div/div/section[4]")));
+            WebElement coursesContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".swiper-button-next")));
 
             JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
             javascriptExecutor.executeScript("window.scrollBy(500,0)", coursesContainer);
@@ -73,18 +73,18 @@ public class WaitUtils {
      *
      * @param driver Веб-драйвер, используемый для управления браузером.
      * @return {@code true}, если прокрутка выполнена успешно, иначе {@code false}.
-     * @throws TimeoutException Если указанный элемент не найден в течение заданного времени ожидания.
      */
     public static boolean scrollToDown(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         try {
             WebElement coursesContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("/html/body")));
 
             JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-            javascriptExecutor.executeScript("window.scrollIntoView(true)", coursesContainer);
+            javascriptExecutor.executeScript("arguments[0].scrollIntoView(true)", coursesContainer);
 
             return true;
         } catch (Exception e) {
+            System.out.println("Ошибка при прокрутке страницы вниз: " + e.getMessage());
             return false;
         }
     }
