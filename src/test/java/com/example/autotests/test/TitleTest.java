@@ -11,15 +11,13 @@ import org.testng.annotations.Test;
  */
 public class TitleTest extends BaseTest {
 
-    public final static String URL_TITLE = "https://www.way2automation.com/";
-
     /**
      * Тест для проверки видимости основных элементов на странице.
      */
     @Test
-    @Issue("1")
+    @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
-    @Owner("Tokar Kirill")
+    @Owner("Kirill")
     @DisplayName("Проверка видимости полей")
     @Epic("Блок - U")
     @Story("Главная Страница")
@@ -39,9 +37,9 @@ public class TitleTest extends BaseTest {
      * Тест для проверки наличия контактной информации в header.
      */
     @Test
-    @Issue("2")
+    @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
-    @Owner("Tokar Kirill")
+    @Owner("Kirill")
     @DisplayName("Проверка видимости контактной информации")
     @Epic("Блок - U")
     @Story("Главная Страница")
@@ -60,9 +58,9 @@ public class TitleTest extends BaseTest {
      * Тест для проверки кнопок навигации (вперед и назад): работают корректно (меняют слайды)
      */
     @Test
-    @Issue("2")
+    @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
-    @Owner("Tokar Kirill")
+    @Owner("Kirill")
     @DisplayName("Проверка видимости контактной информации")
     @Epic("Блок - U")
     @Story("Главная Страница")
@@ -79,9 +77,9 @@ public class TitleTest extends BaseTest {
      * Тест для проверки наличия контактной информации в footer.
      */
     @Test
-    @Issue("2")
+    @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
-    @Owner("Tokar Kirill")
+    @Owner("Kirill")
     @DisplayName("Проверка видимости контактной информации")
     @Epic("Блок - U")
     @Story("Главная Страница")

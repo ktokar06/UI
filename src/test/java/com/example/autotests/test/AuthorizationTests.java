@@ -7,29 +7,20 @@ import org.junit.jupiter.api.DisplayName;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static com.example.autotests.config.MyConfig.*;
+
 /**
  * Класс для проведения тестов авторизации.
  */
 public class AuthorizationTests extends BaseTest {
 
-    public static final String URL_LOGIN = "https://www.way2automation.com/angularjs-protractor/registeration/#/login";
-
-    private static final String VALID_USERNAME = "angular";
-    private static final String VALID_PASSWORD = "password";
-    private static final String VALID_USERNAME_DESCRIPTION = "hello";
-
-    private static final String INVALID_USERNAME = "user";
-    private static final String INVALID_PASSWORD = "pass24word";
-    private static final String INVALID_USERNAME_DESCRIPTION = "description";
-
-
     /**
      * Тест для проверки видимости полей.
      */
     @Test
-    @Issue("1")
+    @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Tokar Kirill")
+    @Owner("Kirill")
     @DisplayName("Проверка видимости полей")
     @Epic("Блок - U")
     @Story("Авторизация")
@@ -47,9 +38,9 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверки входа с правильными данными.
      */
     @Test
-    @Issue("2")
+    @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Tokar Kirill")
+    @Owner("Kirill")
     @DisplayName("Вход с правильными данными")
     @Epic("Блок - U")
     @Story("Авторизация")
@@ -70,9 +61,9 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверки входа с неправильными данными.
      */
     @Test
-    @Issue("3")
+    @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Tokar Kirill")
+    @Owner("Kirill")
     @DisplayName("Вход с неправильными данными")
     @Epic("Блок - U")
     @Story("Авторизация")
@@ -93,9 +84,9 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверка Выхода после Входа в аккаунт.
      */
     @Test
-    @Issue("4")
+    @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Tokar Kirill")
+    @Owner("Kirill")
     @DisplayName("Выход после входа в аккаунт")
     @Epic("Блок - U")
     @Story("Авторизация")
