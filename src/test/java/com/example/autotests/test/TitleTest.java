@@ -22,7 +22,7 @@ public class TitleTest extends BaseTest {
     @Epic("Блок - U")
     @Story("Главная Страница")
     @Feature("Проверка видимости полей в заговловке страницы")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.NORMAL)
     public void visibilityCheckHeaderTest(){
         TitlePage titlePage = new TitlePage(getDriver());
 
@@ -63,7 +63,7 @@ public class TitleTest extends BaseTest {
     @Story("Главная Страница")
     @Feature("Проверка кнопокок навигации курсов")
     @Severity(SeverityLevel.BLOCKER)
-    public void BlockContactInfoTest() {
+    public void navigationButtonsTest() {
         TitlePage titlePage = new TitlePage(getDriver());
 
         Assert.assertTrue(titlePage.clickRight(getDriver()));
@@ -86,5 +86,23 @@ public class TitleTest extends BaseTest {
         TitlePage titlePage = new TitlePage(getDriver());
 
         Assert.assertTrue(titlePage.getFooterContactInfo().isDisplayed());
+    }
+
+    /**
+     * Тест для проверки Отображения меню при скроллинге страницы вниз.
+     */
+    @Test
+    @Issue("---")
+    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
+    @Owner("Kirill")
+    @DisplayName("Отображение меню при скроллинге страницы вниз")
+    @Epic("Блок - U")
+    @Story("Главная Страница")
+    @Feature("Проверка отображения меню при скроллинге страницы внизы")
+    @Severity(SeverityLevel.BLOCKER)
+    public void verifyHeaderContactVisibility() {
+        TitlePage titlePage = new TitlePage(getDriver());
+
+        Assert.assertTrue(titlePage.clickDown(getDriver()));
     }
 }

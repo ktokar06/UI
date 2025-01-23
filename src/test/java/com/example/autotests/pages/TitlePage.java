@@ -277,4 +277,15 @@ public class TitlePage extends BasePage {
     public boolean clickRight(WebDriver driver) {
         return WaitUtils.scrollToRight(driver);
     }
+
+    /**
+     * Нажатие кнопки для прокрутки страницы вниз.
+     *
+     * @param driver Веб-драйвер, используемый для управления браузером.
+     * @return {@code true}, если прокрутка выполнена успешно, иначе {@code false}.
+     */
+    @Step("Прокрутка страницы вниз")
+    public boolean clickDown(WebDriver driver) {
+        return WaitUtils.scrollToDown(driver);
+    }
 }
