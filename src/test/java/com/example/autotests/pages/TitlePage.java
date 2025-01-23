@@ -1,5 +1,6 @@
 package com.example.autotests.pages;
 
+import com.example.autotests.util.WaitUtils;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -253,5 +254,27 @@ public class TitlePage extends BasePage {
     @Step("Установка нового элемента с контактной информацией в подвале")
     public void setFooterContactInfo(WebElement footerContactInfo) {
         this.footerContactInfo = footerContactInfo;
+    }
+
+    /**
+     * Прокручивает страницу браузера влево на 500 пикселей относительно текущего положения окна.
+     *
+     * @param driver Веб-драйвер, используемый для управления браузером.
+     * @return {@code true}, если прокрутка выполнена успешно, иначе {@code false}.
+     */
+    @Step("Прокрутить страницу влево")
+    public boolean clickLeft(WebDriver driver) {
+        return WaitUtils.scrollToLeft(driver);
+    }
+
+    /**
+     * Прокручивает страницу браузера вправо на 500 пикселей относительно текущего положения окна.
+     *
+     * @param driver Веб-драйвер, используемый для управления браузером.
+     * @return {@code true}, если прокрутка выполнена успешно, иначе {@code false}.
+     */
+    @Step("Прокрутить страницу вправо")
+    public boolean clickRight(WebDriver driver) {
+        return WaitUtils.scrollToRight(driver);
     }
 }

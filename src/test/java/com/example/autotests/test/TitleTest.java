@@ -66,9 +66,8 @@ public class TitleTest extends BaseTest {
     public void BlockContactInfoTest() {
         TitlePage titlePage = new TitlePage(getDriver());
 
-
-        Assert.assertTrue(titlePage.getNextCourseButton().isDisplayed());
-        Assert.assertTrue(titlePage.getPreviousCourseButton().isDisplayed());
+        Assert.assertTrue(titlePage.clickRight(getDriver()));
+        Assert.assertTrue(titlePage.clickLeft(getDriver()));
     }
 
     /**
