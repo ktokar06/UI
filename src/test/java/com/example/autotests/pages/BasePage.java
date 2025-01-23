@@ -1,5 +1,6 @@
 package com.example.autotests.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -31,6 +32,7 @@ public class BasePage {
      *
      * @return Экземпляр веб-драйвера.
      */
+    @Step("Получение текущего экземпляра веб-драйвера")
     public WebDriver getDriver() {
         return driver;
     }
@@ -40,6 +42,7 @@ public class BasePage {
      *
      * @param driver Новый экземпляр веб-драйвера.
      */
+    @Step("Установка нового экземпляра веб-драйвера")
     public void setDriver(WebDriver driver) {
         this.driver = driver;
     }

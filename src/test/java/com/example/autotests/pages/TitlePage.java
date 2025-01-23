@@ -63,239 +63,50 @@ public class TitlePage extends BasePage {
         super(driver);
     }
 
-
     /**
-     * Возвращает элемент заголовка страницы.
+     * Получение заголовка страницы.
      *
-     * @return Элемент заголовка страницы.
+     * @return Заголовок страницы.
      */
-    @Step("Получение элемента заголовка страницы")
+    @Step("Получение заголовка страницы")
     public WebElement getHeader() {
         return header;
     }
 
     /**
-     * Устанавливает элемент заголовка страницы.
+     * Установка заголовка страницы.
      *
-     * @param header Новый элемент заголовка страницы.
+     * @param header Новый заголовок страницы.
      */
-    @Step("Установка элемента заголовка страницы")
+    @Step("Установка заголовка страницы")
     public void setHeader(WebElement header) {
         this.header = header;
     }
 
     /**
-     * Возвращает электронные почты в футере страницы.
+     * Получение навигационной панели страницы.
      *
-     * @return Электронные почты в футере страницы.
+     * @return Навигационная панель страницы.
      */
-    @Step("Получение электронных почт в футере страницы")
-    public WebElement getEmails() {
-        return emails;
+    @Step("Получение навигационной панели страницы")
+    public WebElement getNavigationBar() {
+        return navigationBar;
     }
 
     /**
-     * Устанавливает электронные почты в футере страницы.
+     * Установка навигационной панели страницы.
      *
-     * @param emails Новые электронные почты в футере страницы.
+     * @param navigationBar Новая навигационная панель страницы.
      */
-    @Step("Установка электронных почт в футере страницы")
-    public void setEmails(WebElement emails) {
-        this.emails = emails;
+    @Step("Установка навигационной панели страницы")
+    public void setNavigationBar(WebElement navigationBar) {
+        this.navigationBar = navigationBar;
     }
 
     /**
-     * Возвращает номера телефонов в футере страницы.
+     * Получение кнопки регистрации.
      *
-     * @return Номера телефонов в футере страницы.
-     */
-    @Step("Получение номеров телефонов в футере страницы")
-    public WebElement getFooterPhoneNumbers() {
-        return footerPhoneNumbers;
-    }
-
-    /**
-     * Устанавливает номера телефонов в футере страницы.
-     *
-     * @param footerPhoneNumbers Новые номера телефонов в футере страницы.
-     */
-    @Step("Установка номеров телефонов в футере страницы")
-    public void setFooterPhoneNumbers(WebElement footerPhoneNumbers) {
-        this.footerPhoneNumbers = footerPhoneNumbers;
-    }
-
-    /**
-     * Возвращает адрес компании в футере страницы.
-     *
-     * @return Адрес компании в футере страницы.
-     */
-    @Step("Получение адреса компании в футере страницы")
-    public WebElement getAddress() {
-        return address;
-    }
-
-    /**
-     * Устанавливает адрес компании в футере страницы.
-     *
-     * @param address Новый адрес компании в футере страницы.
-     */
-    @Step("Установка адреса компании в футере страницы")
-    public void setAddress(WebElement address) {
-        this.address = address;
-    }
-
-    /**
-     * Возвращает кнопку перехода к предыдущему курсу.
-     *
-     * @return Кнопку перехода к предыдущему курсу.
-     */
-    @Step("Получение кнопки перехода к предыдущему курсу")
-    public WebElement getPreviousCourseButton() {
-        return previousCourseButton;
-    }
-
-    /**
-     * Устанавливает кнопку перехода к предыдущему курсу.
-     *
-     * @param previousCourseButton Новая кнопка перехода к предыдущему курсу.
-     */
-    @Step("Установка кнопки перехода к предыдущему курсу")
-    public void setPreviousCourseButton(WebElement previousCourseButton) {
-        this.previousCourseButton = previousCourseButton;
-    }
-
-    /**
-     * Возвращает кнопку перехода к следующему курсу.
-     *
-     * @return Кнопку перехода к следующему курсу.
-     */
-    @Step("Получение кнопки перехода к следующему курсу")
-    public WebElement getNextCourseButton() {
-        return nextCourseButton;
-    }
-
-    /**
-     * Устанавливает кнопку перехода к следующему курсу.
-     *
-     * @param nextCourseButton Новая кнопка перехода к следующему курсу.
-     */
-    @Step("Установка кнопки перехода к следующему курсу")
-    public void setNextCourseButton(WebElement nextCourseButton) {
-        this.nextCourseButton = nextCourseButton;
-    }
-
-    /**
-     * Возвращает ссылки на социальные сети в шапке страницы.
-     *
-     * @return Ссылки на социальные сети в шапке страницы.
-     */
-    @Step("Получение ссылок на социальные сети в шапке страницы")
-    public WebElement getSocialMediaLinks() {
-        return socialMediaLinks;
-    }
-
-    /**
-     * Устанавливает ссылки на социальные сети в шапке страницы.
-     *
-     * @param socialMediaLinks Новые ссылки на социальные сети в шапке страницы.
-     */
-    @Step("Установка ссылок на социальные сети в шапке страницы")
-    public void setSocialMediaLinks(WebElement socialMediaLinks) {
-        this.socialMediaLinks = socialMediaLinks;
-    }
-
-    /**
-     * Возвращает электронную почту в шапке страницы.
-     *
-     * @return Электронную почту в шапке страницы.
-     */
-    @Step("Получение электронной почты в шапке страницы")
-    public WebElement getEmailAddress() {
-        return emailAddress;
-    }
-
-    /**
-     * Устанавливает электронную почту в шапке страницы.
-     *
-     * @param emailAddress Новая электронная почта в шапке страницы.
-     */
-    @Step("Установка электронной почты в шапке страницы")
-    public void setEmailAddress(WebElement emailAddress) {
-        this.emailAddress = emailAddress;
-    }
-
-    /**
-     * Возвращает ссылку на Skype в шапке страницы.
-     *
-     * @return Ссылку на Skype в шапке страницы.
-     */
-    @Step("Получение ссылки на Skype в шапке страницы")
-    public WebElement getSkypeLink() {
-        return skypeLink;
-    }
-
-    /**
-     * Устанавливает ссылку на Skype в шапке страницы.
-     *
-     * @param skypeLink Новая ссылка на Skype в шапке страницы.
-     */
-    @Step("Установка ссылки на Skype в шапке страницы")
-    public void setSkypeLink(WebElement skypeLink) {
-        this.skypeLink = skypeLink;
-    }
-
-    public WebElement getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(WebElement phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    /**
-     * Возвращает элемент футера страницы.
-     *
-     * @return Элемент футера страницы.
-     */
-    @Step("Получение элемента футера страницы")
-    public WebElement getFooter() {
-        return footer;
-    }
-
-    /**
-     * Устанавливает элемент футера страницы.
-     *
-     * @param footer Новый элемент футера страницы.
-     */
-    @Step("Установка элемента футера страницы")
-    public void setFooter(WebElement footer) {
-        this.footer = footer;
-    }
-
-    /**
-     * Возвращает список курсов.
-     *
-     * @return Элемент списка курсов.
-     */
-    @Step("Получение списка курсов")
-    public WebElement getCourseList() {
-        return courseList;
-    }
-
-    /**
-     * Устанавливает список курсов.
-     *
-     * @param courseList Новый элемент списка курсов.
-     */
-    @Step("Установка списка курсов")
-    public void setCourseList(WebElement courseList) {
-        this.courseList = courseList;
-    }
-
-    /**
-     * Возвращает кнопку регистрации.
-     *
-     * @return Элемент кнопки регистрации.
+     * @return Кнопка регистрации.
      */
     @Step("Получение кнопки регистрации")
     public WebElement getRegistrationButton() {
@@ -303,9 +114,9 @@ public class TitlePage extends BasePage {
     }
 
     /**
-     * Устанавливает кнопку регистрации.
+     * Установка кнопки регистрации.
      *
-     * @param registrationButton Новый элемент кнопки регистрации.
+     * @param registrationButton Новая кнопка регистрации.
      */
     @Step("Установка кнопки регистрации")
     public void setRegistrationButton(WebElement registrationButton) {
@@ -313,23 +124,222 @@ public class TitlePage extends BasePage {
     }
 
     /**
-     * Возвращает навигационную панель.
+     * Получение списка курсов.
      *
-     * @return Элемент навигационной панели.
+     * @return Список курсов.
      */
-    @Step("Получение навигационной панели")
-    public WebElement getNavigationBar() {
-
-        return navigationBar;
+    @Step("Получение списка курсов")
+    public WebElement getCourseList() {
+        return courseList;
     }
 
     /**
-     * Устанавливает навигационную панель.
+     * Установка списка курсов.
      *
-     * @param navigationBar Новый элемент навигационной панели.
+     * @param courseList Новый список курсов.
      */
-    @Step("Установка навигационной панели")
-    public void setNavigationBar(WebElement navigationBar) {
-        this.navigationBar = navigationBar;
+    @Step("Установка списка курсов")
+    public void setCourseList(WebElement courseList) {
+        this.courseList = courseList;
+    }
+
+    /**
+     * Получение футера страницы.
+     *
+     * @return Футер страницы.
+     */
+    @Step("Получение футера страницы")
+    public WebElement getFooter() {
+        return footer;
+    }
+
+    /**
+     * Установка футера страницы.
+     *
+     * @param footer Новый футер страницы.
+     */
+    @Step("Установка футера страницы")
+    public void setFooter(WebElement footer) {
+        this.footer = footer;
+    }
+
+    /**
+     * Получение номера телефона.
+     *
+     * @return Номер телефона.
+     */
+    @Step("Получение номера телефона")
+    public WebElement getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    /**
+     * Установка номера телефона.
+     *
+     * @param phoneNumber Новый номер телефона.
+     */
+    @Step("Установка номера телефона")
+    public void setPhoneNumber(WebElement phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * Получение ссылки на Skype.
+     *
+     * @return Ссылка на Skype.
+     */
+    @Step("Получение ссылки на Skype")
+    public WebElement getSkypeLink() {
+        return skypeLink;
+    }
+
+    /**
+     * Установка ссылки на Skype.
+     *
+     * @param skypeLink Новая ссылка на Skype.
+     */
+    @Step("Установка ссылки на Skype")
+    public void setSkypeLink(WebElement skypeLink) {
+        this.skypeLink = skypeLink;
+    }
+
+    /**
+     * Получение адреса электронной почты.
+     *
+     * @return Адрес электронной почты.
+     */
+    @Step("Получение адреса электронной почты")
+    public WebElement getEmailAddress() {
+        return emailAddress;
+    }
+
+    /**
+     * Установка адреса электронной почты.
+     *
+     * @param emailAddress Новый адрес электронной почты.
+     */
+    @Step("Установка адреса электронной почты")
+    public void setEmailAddress(WebElement emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    /**
+     * Получение ссылок на социальные сети.
+     *
+     * @return Ссылки на социальные сети.
+     */
+    @Step("Получение ссылок на социальные сети")
+    public WebElement getSocialMediaLinks() {
+        return socialMediaLinks;
+    }
+
+    /**
+     * Установка ссылок на социальные сети.
+     *
+     * @param socialMediaLinks Новые ссылки на социальные сети.
+     */
+    @Step("Установка ссылок на социальные сети")
+    public void setSocialMediaLinks(WebElement socialMediaLinks) {
+        this.socialMediaLinks = socialMediaLinks;
+    }
+
+    /**
+     * Получение кнопки для перехода к следующему курсу.
+     *
+     * @return Кнопка для перехода к следующему курсу.
+     */
+    @Step("Получение кнопки для перехода к следующему курсу")
+    public WebElement getNextCourseButton() {
+        return nextCourseButton;
+    }
+
+    /**
+     * Установка кнопки для перехода к следующему курсу.
+     *
+     * @param nextCourseButton Новая кнопка для перехода к следующему курсу.
+     */
+    @Step("Установка кнопки для перехода к следующему курсу")
+    public void setNextCourseButton(WebElement nextCourseButton) {
+        this.nextCourseButton = nextCourseButton;
+    }
+
+    /**
+     * Получение кнопки для перехода к предыдущему курсу.
+     *
+     * @return Кнопка для перехода к предыдущему курсу.
+     */
+    @Step("Получение кнопки для перехода к предыдущему курсу")
+    public WebElement getPreviousCourseButton() {
+        return previousCourseButton;
+    }
+
+    /**
+     * Установка кнопки для перехода к предыдущему курсу.
+     *
+     * @param previousCourseButton Новая кнопка для перехода к предыдущему курсу.
+     */
+    @Step("Установка кнопки для перехода к предыдущему курсу")
+    public void setPreviousCourseButton(WebElement previousCourseButton) {
+        this.previousCourseButton = previousCourseButton;
+    }
+
+    /**
+     * Получение элемента с адресом в футере.
+     *
+     * @return Элемент с адресом.
+     */
+    @Step("Получение элемента с адресом в футере")
+    public WebElement getAddress() {
+        return address;
+    }
+
+    /**
+     * Установка элемента с адресом в футере.
+     *
+     * @param address Новый элемент с адресом.
+     */
+    @Step("Установка элемента с адресом в футере")
+    public void setAddress(WebElement address) {
+        this.address = address;
+    }
+
+    /**
+     * Получение элемента с электронными почтовыми адресами в футере.
+     *
+     * @return Элемент с электронными почтовыми адресами.
+     */
+    @Step("Получение элемента с электронными почтовыми адресами в футере")
+    public WebElement getEmails() {
+        return emails;
+    }
+
+    /**
+     * Установка элемента с электронными почтовыми адресами в футере.
+     *
+     * @param emails Новый элемент с электронными почтовыми адресами.
+     */
+    @Step("Установка элемента с электронными почтовыми адресами в футере")
+    public void setEmails(WebElement emails) {
+        this.emails = emails;
+    }
+
+    /**
+     * Получение элемента с номерами телефонов в футере.
+     *
+     * @return Элемент с номерами телефонов.
+     */
+    @Step("Получение элемента с номерами телефонов в футере")
+    public WebElement getFooterPhoneNumbers() {
+        return footerPhoneNumbers;
+    }
+
+    /**
+     * Установка элемента с номерами телефонов в футере.
+     *
+     * @param footerPhoneNumbers Новый элемент с номерами телефонов.
+     */
+    @Step("Установка элемента с номерами телефонов в футере")
+    public void setFooterPhoneNumbers(WebElement footerPhoneNumbers) {
+        this.footerPhoneNumbers = footerPhoneNumbers;
     }
 }

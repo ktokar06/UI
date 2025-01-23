@@ -60,6 +60,7 @@ public class LoginPage extends BasePage {
      *
      * @return Элемент поля для ввода имени пользователя.
      */
+    @Step("Получение элемента поля для ввода имени пользователя")
     public WebElement getUsername() {
         return username;
     }
@@ -80,6 +81,7 @@ public class LoginPage extends BasePage {
      *
      * @return Элемент поля для ввода пароля.
      */
+    @Step("Получение элемента поля для ввода пароля")
     public WebElement getPassword() {
         return password;
     }
@@ -100,6 +102,7 @@ public class LoginPage extends BasePage {
      *
      * @return Элемент поля для ввода описания имени пользователя.
      */
+    @Step("Получение элемента поля для ввода описания имени пользователя")
     public WebElement getUsernameDescription() {
         return usernameDescription;
     }
@@ -117,6 +120,7 @@ public class LoginPage extends BasePage {
      *
      * @return Элемент кнопки для отправки формы входа.
      */
+    @Step("Получение элемента кнопки для отправки формы входа")
     public WebElement getSubmitButton() {
         return submitButton;
     }

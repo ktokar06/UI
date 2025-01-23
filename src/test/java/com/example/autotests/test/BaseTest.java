@@ -1,5 +1,6 @@
 package com.example.autotests.test;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -30,7 +31,7 @@ public class BaseTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         //driver.get(URL_LOGIN);
         driver.get(URL_TITLE);
     }
@@ -52,6 +53,7 @@ public class BaseTest {
      *
      * @return Экземпляр веб-драйвера.
      */
+    @Step("Получение текущего экземпляра веб-драйвера")
     public WebDriver getDriver() {
         return driver;
     }
@@ -61,6 +63,7 @@ public class BaseTest {
      *
      * @param driver Новый экземпляр веб-драйвера.
      */
+    @Step("Установка нового экземпляра веб-драйвера")
     public void setDriver(WebDriver driver) {
         this.driver = driver;
     }
