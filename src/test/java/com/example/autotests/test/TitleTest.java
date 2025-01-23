@@ -48,10 +48,7 @@ public class TitleTest extends BaseTest {
     public void headerContactInfoTest() {
         TitlePage titlePage = new TitlePage(getDriver());
 
-        Assert.assertTrue(titlePage.getPhoneNumber().isDisplayed());
-        Assert.assertTrue(titlePage.getSkypeLink().isDisplayed());
-        Assert.assertTrue(titlePage.getEmailAddress().isDisplayed());
-        Assert.assertTrue(titlePage.getSocialMediaLinks().isDisplayed());
+        Assert.assertTrue(titlePage.getContactInfo().isDisplayed());
     }
 
     /**
@@ -68,6 +65,7 @@ public class TitleTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     public void BlockContactInfoTest() {
         TitlePage titlePage = new TitlePage(getDriver());
+
 
         Assert.assertTrue(titlePage.getNextCourseButton().isDisplayed());
         Assert.assertTrue(titlePage.getPreviousCourseButton().isDisplayed());
@@ -88,8 +86,6 @@ public class TitleTest extends BaseTest {
     public void footerContactInfoTest() {
         TitlePage titlePage = new TitlePage(getDriver());
 
-        Assert.assertTrue(titlePage.getAddress().isDisplayed());
-        Assert.assertTrue(titlePage.getFooterPhoneNumbers().isDisplayed());
-        Assert.assertTrue(titlePage.getEmails().isDisplayed());
+        Assert.assertTrue(titlePage.getFooterInfo().isDisplayed());
     }
 }
