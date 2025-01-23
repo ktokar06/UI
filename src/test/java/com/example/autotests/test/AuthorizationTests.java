@@ -21,7 +21,7 @@ public class AuthorizationTests extends BaseTest {
     @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @Owner("Kirill")
-    @DisplayName("Проверка видимости полей")
+    @DisplayName("Видимость полей")
     @Epic("Блок - U")
     @Story("Авторизация")
     @Feature("Проверка видимости полей")

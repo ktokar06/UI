@@ -18,10 +18,10 @@ public class TitleTest extends BaseTest {
     @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
     @Owner("Kirill")
-    @DisplayName("Проверка видимости полей")
+    @DisplayName("Видимость полей в заговловке страницы")
     @Epic("Блок - U")
     @Story("Главная Страница")
-    @Feature("Проверка видимости полей")
+    @Feature("Проверка видимости полей в заговловке страницы")
     @Severity(SeverityLevel.BLOCKER)
     public void visibilityCheckHeaderTest(){
         TitlePage titlePage = new TitlePage(getDriver());
@@ -40,15 +40,15 @@ public class TitleTest extends BaseTest {
     @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
     @Owner("Kirill")
-    @DisplayName("Проверка видимости контактной информации")
+    @DisplayName("Видимость контактной информации в хедере страницы")
     @Epic("Блок - U")
     @Story("Главная Страница")
-    @Feature("Проверка видимости контактной информации")
+    @Feature("Проверка видимости контактной информации в хедере страницы")
     @Severity(SeverityLevel.BLOCKER)
     public void headerContactInfoTest() {
         TitlePage titlePage = new TitlePage(getDriver());
 
-        Assert.assertTrue(titlePage.getContactInfo().isDisplayed());
+        Assert.assertTrue(titlePage.getHeaderContactInfo().isDisplayed());
     }
 
     /**
@@ -58,10 +58,10 @@ public class TitleTest extends BaseTest {
     @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
     @Owner("Kirill")
-    @DisplayName("Проверка видимости контактной информации")
+    @DisplayName("Кнопоки навигации курсов")
     @Epic("Блок - U")
     @Story("Главная Страница")
-    @Feature("Проверка видимости контактной информации")
+    @Feature("Проверка кнопокок навигации курсов")
     @Severity(SeverityLevel.BLOCKER)
     public void BlockContactInfoTest() {
         TitlePage titlePage = new TitlePage(getDriver());
@@ -78,14 +78,14 @@ public class TitleTest extends BaseTest {
     @Issue("---")
     @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
     @Owner("Kirill")
-    @DisplayName("Проверка видимости контактной информации")
+    @DisplayName("Видимость контактной информации в подвале страницы")
     @Epic("Блок - U")
     @Story("Главная Страница")
-    @Feature("Проверка видимости контактной информации")
+    @Feature("Проверка видимости контактной информации в подвале страницы")
     @Severity(SeverityLevel.BLOCKER)
     public void footerContactInfoTest() {
         TitlePage titlePage = new TitlePage(getDriver());
 
-        Assert.assertTrue(titlePage.getFooterInfo().isDisplayed());
+        Assert.assertTrue(titlePage.getFooterContactInfo().isDisplayed());
     }
 }
