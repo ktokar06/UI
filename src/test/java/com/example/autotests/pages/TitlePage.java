@@ -5,40 +5,65 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * Класс представляет главную страницу сайта и содержит элементы, необходимые для тестирования.
+ */
+
 public class TitlePage extends BasePage {
 
-    // 1.1 Проверка открытия страницы
+    /**
+     * Элемент заголовочной области страницы.
+     */
     @FindBy(css = ".ast-above-header-bar")
     private WebElement header;
 
+    /**
+     * Элемент навигационной панели.
+     */
     @FindBy(css = "#masthead")
     private WebElement navigationBar;
 
-    @FindBy(id ="menu-item-27625")
+    /**
+     * Кнопка регистрации.
+     */
+    @FindBy(id = "menu-item-27625")
     private WebElement registrationButton;
 
+    /**
+     * Список курсов.
+     */
     @FindBy(css = ".elementor-element-populated")
     private WebElement courseList;
 
+    /**
+     * Элемент подвала страницы.
+     */
     @FindBy(css = ".elementor-background-overlay")
     private WebElement footer;
 
-
-    // 1.2 Проверка хедера с контактной информацией
+    /**
+     * Контактная информация в хедере.
+     */
     @FindBy(css = ".elementor-icon-list-items")
-    private WebElement contactInfo;
+    private WebElement headerContactInfo;
 
-
-    // 1.3 Блок с курсами (Most Popular Software Testing Courses)
+    /**
+     * Кнопка перехода к следующему курсу.
+     */
     @FindBy(css = ".swiper-button-next")
     private WebElement nextCourseButton;
 
+    /**
+     * Кнопка возврата к предыдущему курсу.
+     */
     @FindBy(css = ".swiper-button-prev")
     private WebElement previousCourseButton;
 
-    // 1.4 Футер
+    /**
+     * Контактная информация в подвале.
+     */
     @FindBy(css = ".elementor-icon-list-item > a")
-    private WebElement footerInfo;
+    private WebElement footerContactInfo;
 
 
     /**
@@ -151,23 +176,23 @@ public class TitlePage extends BasePage {
     }
 
     /**
-     * Получение ссылок на контакную информацию.
+     * Получение элементов, содержащих контактные данные в хедере страницы.
      *
-     * @return Ссылки на социальные сети.
+     * @return Веб-элемент с контактными данными в хедере.
      */
-    @Step("Получение ссылок на социальные сети")
-    public WebElement getContactInfo() {
-        return contactInfo;
+    @Step("Получение контактных данных в хедере")
+    public WebElement getHeaderContactInfo() {
+        return headerContactInfo;
     }
 
     /**
-     * Установка ссылок на контакную информацию.
+     * Установка новых элементов, содержащих контактные данные в хедере страницы.
      *
-     * @param contactInfo Новые ссылки на социальные сети.
+     * @param headerContactInfo Новые веб-элементы с контактными данными для хедера.
      */
-    @Step("Установка ссылок на социальные сети")
-    public void setContactInfo(WebElement contactInfo) {
-        this.contactInfo = contactInfo;
+    @Step("Установка контактных данных в хедере")
+    public void setHeaderContactInfo(WebElement headerContactInfo) {
+        this.headerContactInfo = headerContactInfo;
     }
 
     /**
@@ -211,22 +236,22 @@ public class TitlePage extends BasePage {
     }
 
     /**
-     * Получение элемента с номерами телефонов в футере.
+     * Возвращает элемент, содержащий контактную информацию в подвале страницы.
      *
-     * @return Элемент с номерами телефонов.
+     * @return Веб-элемент с контактной информацией в подвале.
      */
-    @Step("Получение элемента с номерами телефонов в футере")
-    public WebElement getFooterInfo() {
-        return footerInfo;
+    @Step("Получение элемента с контактной информацией в подвале")
+    public WebElement getFooterContactInfo() {
+        return footerContactInfo;
     }
 
     /**
-     * Установка элемента с номерами телефонов в футере.
+     * Устанавливает новый элемент, содержащий контактную информацию в подвале страницы.
      *
-     * @param footerPhoneNumbers Новый элемент с номерами телефонов.
+     * @param footerContactInfo Новый веб-элемент с контактной информацией для подвала.
      */
-    @Step("Установка элемента с номерами телефонов в футере")
-    public void setFooterInfo(WebElement footerPhoneNumbers) {
-        this.footerInfo = footerPhoneNumbers;
+    @Step("Установка нового элемента с контактной информацией в подвале")
+    public void setFooterContactInfo(WebElement footerContactInfo) {
+        this.footerContactInfo = footerContactInfo;
     }
 }
