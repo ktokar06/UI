@@ -21,8 +21,8 @@ public class WaitUtils {
     public static boolean waitForElementPresence(WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(
-                    By.className("ng-scope")));
+            wait.until(ExpectedConditions.
+                    visibilityOfElementLocated(By.className("ng-scope")));
             return true;
         } catch (Exception e) {
             return false;
