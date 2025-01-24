@@ -44,7 +44,7 @@ public class AuthorizationTests extends BaseTest {
     }
 
     /**
-     * Тест для проверки входа с правильными данными.
+     * Тест для проверки авторизации с правильными данными.
      */
     @Test
     @Issue("2")
@@ -67,7 +67,7 @@ public class AuthorizationTests extends BaseTest {
     }
 
     /**
-     * Тест для проверки входа с неправильными данными.
+     * Тест для проверки авторизации с неправильными данными.
      */
     @Test
     @Issue("3")
@@ -90,7 +90,7 @@ public class AuthorizationTests extends BaseTest {
     }
 
     /**
-     * Тест для проверка Выхода после Входа в аккаунт.
+     * Тест для проверка Logout после авторизации в аккаунт.
      */
     @Test
     @Issue("4")
