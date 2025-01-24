@@ -1,5 +1,8 @@
 package com.example.autotests.test;
 
+import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -18,7 +21,7 @@ public class BaseTest {
     /**
      * Веб-драйвер, который используется для управления браузером и выполнения действий на страницах.
      */
-    private WebDriver driver;
+    private static WebDriver driver;
 
     /**
      * Метод, выполняемый перед каждым тестовым методом.
@@ -35,11 +38,17 @@ public class BaseTest {
 
     /**
      * Метод, выполняемый после каждого тестового метода.
-     *
+     *FailedScreenshot
      * Закрывает браузер и освобождает ресурсы.
      */
     @AfterMethod
-    public void tearDown() {
+    public void tearDown()  {
+        Allure.getLifecycle().addAttachment(
+                "Screenshot", "image/png", "png"
+                , ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES)
+        );
+        getDriver().close();
+        getDriver().quit();
         if (driver != null) {
             driver.quit();
         }
