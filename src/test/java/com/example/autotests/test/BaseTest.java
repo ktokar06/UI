@@ -38,11 +38,11 @@ public class BaseTest {
 
     /**
      * Метод, выполняемый после каждого тестового метода.
-     *
+     *FailedScreenshot
      * Закрывает браузер и освобождает ресурсы.
      */
     @AfterMethod
-    public void tearDown() {
+    public void tearDown()  {
         Allure.getLifecycle().addAttachment(
                 "FailedScreenshot", "image/png", "png"
                 , ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES)
