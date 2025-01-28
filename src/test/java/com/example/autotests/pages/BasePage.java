@@ -1,7 +1,9 @@
 package com.example.autotests.pages;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 /**
@@ -15,7 +17,7 @@ public class BasePage {
     /**
      * Веб-драйвер, который используется для управления браузером и выполнения действий на страницах.
      */
-    private WebDriver driver;
+    private static WebDriver driver;
 
     /**
      * Конструктор страницы, инициализирующий элементы страницы.
@@ -45,5 +47,38 @@ public class BasePage {
     @Step("Установка нового экземпляра веб-драйвера")
     public void setDriver(WebDriver driver) {
         this.driver = driver;
+    }
+
+    /**
+     * Прокрутка страницы влево
+     *
+     * @param element Элемент, до которого необходимо прокрутить страницу
+     */
+    @Step("Прокрутка страницы влево")
+    public static void scrollToElementLeft(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(500,0)", element);
+    }
+
+    /**
+     * Прокрутка страницы вправо
+     *
+     * @param element Элемент, до которого необходимо прокрутить страницу
+     */
+    @Step("Прокрутка страницы вправо")
+    public static void scrollToElementRight(WebElement element) {
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        javascriptExecutor.executeScript("window.scrollBy(500,0)", element);
+    }
+
+    /**
+     * Прокрутка страницы вниз до указанного элемента
+     *
+     * @param element Элемент, до которого необходимо прокрутить страницу
+     */
+    @Step("Прокрутка страницы вниз")
+    public static void scrollToElementDown(WebElement element) {
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        javascriptExecutor.executeScript("window.scrollIntoView(true)", element);
     }
 }

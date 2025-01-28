@@ -5,6 +5,9 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 /**
  * Класс, представляющий страницу входа в веб-приложение.
@@ -133,6 +136,7 @@ public class LoginPage extends BasePage {
      */
     @Step("Проверить, выполнен ли успешный вход в систему")
     public boolean isLoggedIn(WebDriver driver) {
-        return WaitUtils.waitForElementPresence(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        return WaitUtils.waitForElementPresence(wait);
     }
 }

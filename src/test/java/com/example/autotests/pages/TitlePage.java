@@ -2,9 +2,13 @@ package com.example.autotests.pages;
 
 import com.example.autotests.util.WaitUtils;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 /**
  * Класс представляет главную страницу сайта и содержит элементы, необходимые для тестирования.
@@ -264,7 +268,8 @@ public class TitlePage extends BasePage {
      */
     @Step("Прокрутить страницу влево")
     public boolean clickLeft(WebDriver driver) {
-        return WaitUtils.scrollToLeft(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        return WaitUtils.scrollToLeft(wait);
     }
 
     /**
@@ -275,7 +280,8 @@ public class TitlePage extends BasePage {
      */
     @Step("Прокрутить страницу вправо")
     public boolean clickRight(WebDriver driver) {
-        return WaitUtils.scrollToRight(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        return WaitUtils.scrollToRight(wait);
     }
 
     /**
@@ -286,7 +292,8 @@ public class TitlePage extends BasePage {
      */
     @Step("Прокрутка страницы вниз")
     public boolean clickDown(WebDriver driver) {
-        return WaitUtils.scrollToDown(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        return WaitUtils.scrollToDown(wait);
     }
 
     /**
@@ -297,6 +304,7 @@ public class TitlePage extends BasePage {
      */
     @Step("Проверка доступности и корректной загрузки страницы Lifetime Membership Club")
     public boolean checkLifeTime(WebDriver driver) {
-        return WaitUtils.waitForElementPresenceTitle(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        return WaitUtils.waitForElementPresenceTitle(wait);
     }
 }

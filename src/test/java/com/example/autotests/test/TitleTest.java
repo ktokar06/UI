@@ -5,6 +5,7 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 /**
  * Класс для проведения тестов главной страницы.
@@ -25,12 +26,15 @@ public class TitleTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     public void visibilityCheckHeaderTest(){
         TitlePage titlePage = new TitlePage(getDriver());
+        SoftAssert softAssert = new SoftAssert();
 
-        Assert.assertTrue(titlePage.getHeader().isDisplayed());
-        Assert.assertTrue(titlePage.getNavigationBar().isDisplayed());
-        Assert.assertTrue(titlePage.getRegistrationButton().isDisplayed());
-        Assert.assertTrue(titlePage.getCourseList().isDisplayed());
-        Assert.assertTrue(titlePage.getFooter().isDisplayed());
+        softAssert.assertTrue(titlePage.getHeader().isDisplayed());
+        softAssert.assertTrue(titlePage.getNavigationBar().isDisplayed());
+        softAssert.assertTrue(titlePage.getRegistrationButton().isDisplayed());
+        softAssert.assertTrue(titlePage.getCourseList().isDisplayed());
+        softAssert.assertTrue(titlePage.getFooter().isDisplayed());
+
+        softAssert.assertAll();
     }
 
     /**

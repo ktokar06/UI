@@ -1,5 +1,6 @@
 package com.example.autotests.util;
 
+import com.example.autotests.pages.BasePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,11 +15,10 @@ public class WaitUtils {
     /**
      * Ожидается появление элемента на странице.
      *
-     * @param driver Веб-драйвер.
+     * @param wait Объект WebDriverWait для ожидания элемента.
      * @return {@code true}, если элемент появился, иначе {@code false}.
      */
-    public static boolean waitForElementPresence(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public static boolean waitForElementPresence(WebDriverWait wait) {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.className("ng-scope")));
@@ -31,16 +31,15 @@ public class WaitUtils {
     /**
      * Прокручивает страницу браузера влево на 500 пикселей относительно текущего положения окна.
      *
-     * @param driver Веб-драйвер, используемый для управления браузером.
+     * @param wait Объект WebDriverWait для ожидания элемента.
      * @return {@code true}, если прокрутка выполнена успешно, иначе {@code false}.
      */
-    public static boolean scrollToLeft(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public static boolean scrollToLeft(WebDriverWait wait) {
         try {
-            WebElement coursesContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".swiper-button-prev")));
+            WebElement coursesContainer = wait.until(ExpectedConditions.
+                    presenceOfElementLocated(By.cssSelector(".swiper-button-prev")));
 
-            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-            javascriptExecutor.executeScript("window.scrollBy(0,500)", coursesContainer);
+            BasePage.scrollToElementLeft(coursesContainer);
 
             return true;
         } catch (Exception e) {
@@ -51,16 +50,15 @@ public class WaitUtils {
     /**
      * Прокручивает страницу браузера вправо на 500 пикселей относительно текущего положения окна.
      *
-     * @param driver Веб-драйвер, используемый для управления браузером.
+     * @param wait Объект WebDriverWait для ожидания элемента.
      * @return {@code true}, если прокрутка выполнена успешно, иначе {@code false}.
      */
-    public static boolean scrollToRight(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public static boolean scrollToRight(WebDriverWait wait) {
         try {
-            WebElement coursesContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".swiper-button-next")));
+            WebElement coursesContainer = wait.until(ExpectedConditions
+                    .presenceOfElementLocated(By.cssSelector(".swiper-button-next")));
 
-            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-            javascriptExecutor.executeScript("window.scrollBy(500,0)", coursesContainer);
+            BasePage.scrollToElementRight(coursesContainer);
 
             return true;
         } catch (Exception e) {
@@ -71,16 +69,15 @@ public class WaitUtils {
     /**
      * Прокручивает страницу вниз до указанного элемента.
      *
-     * @param driver Веб-драйвер, используемый для управления браузером.
+     * @param wait Объект WebDriverWait для ожидания элемента.
      * @return {@code true}, если прокрутка выполнена успешно, иначе {@code false}.
      */
-    public static boolean scrollToDown(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+    public static boolean scrollToDown(WebDriverWait wait) {
         try {
-            WebElement coursesContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("body:not(.logged-in)")));
+            WebElement coursesContainer = wait.until(ExpectedConditions
+                    .presenceOfElementLocated(By.cssSelector("body:not(.logged-in)")));
 
-            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-            javascriptExecutor.executeScript("arguments[0].scrollIntoView(true)", coursesContainer);
+            BasePage.scrollToElementDown(coursesContainer);
 
             return true;
         } catch (Exception e) {
@@ -92,14 +89,14 @@ public class WaitUtils {
     /**
      * Ожидается появление элемента на странице.
      *
-     * @param driver Веб-драйвер.
+     * @param wait Объект WebDriverWait для ожидания элемента.
      * @return {@code true}, если элемент появился, иначе {@code false}.
      */
-    public static boolean waitForElementPresenceTitle(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public static boolean waitForElementPresenceTitle(WebDriverWait wait) {
         try {
 
-            WebElement allCourses = wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("All Courses")));
+            WebElement allCourses = wait.until(ExpectedConditions
+                    .presenceOfElementLocated(By.linkText("All Courses")));
             allCourses.click();
 
             WebElement lifeTimeMemberShip = wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Lifetime Membership")));
