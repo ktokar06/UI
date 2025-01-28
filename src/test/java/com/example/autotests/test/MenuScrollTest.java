@@ -10,6 +10,8 @@ import org.testng.annotations.Test;
 /**
  * Класс для тестирования поведения меню при прокрутке страницы.
  */
+@Epic("Блок - U")
+@Owner("Kirill")
 public class MenuScrollTest extends BaseTest {
 
     /**
@@ -17,10 +19,8 @@ public class MenuScrollTest extends BaseTest {
      */
     @Test
     @Issue("---")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
-    @Owner("Kirill")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/")
     @DisplayName("Отображение меню при скроллинге страницы вниз")
-    @Epic("Блок - U")
     @Story("Главная Страница")
     @Feature("Проверка отображения меню при скроллинге страницы внизы")
     @Severity(SeverityLevel.NORMAL)

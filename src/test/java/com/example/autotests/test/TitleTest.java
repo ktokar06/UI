@@ -10,6 +10,8 @@ import org.testng.asserts.SoftAssert;
 /**
  * Класс для проведения тестов главной страницы.
  */
+@Owner("Kirill")
+@Epic("Блок - U")
 public class TitleTest extends BaseTest {
 
     /**
@@ -17,10 +19,8 @@ public class TitleTest extends BaseTest {
      */
     @Test
     @Issue("---")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
-    @Owner("Kirill")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/")
     @DisplayName("Видимость полей в заговловке страницы")
-    @Epic("Блок - U")
     @Story("Главная Страница")
     @Feature("Проверка видимости полей в заговловке страницы")
     @Severity(SeverityLevel.NORMAL)
@@ -42,10 +42,8 @@ public class TitleTest extends BaseTest {
      */
     @Test
     @Issue("---")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
-    @Owner("Kirill")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/")
     @DisplayName("Видимость контактной информации в хедере страницы")
-    @Epic("Блок - U")
     @Story("Главная Страница")
     @Feature("Проверка видимости контактной информации в хедере страницы")
     @Severity(SeverityLevel.BLOCKER)
@@ -60,10 +58,8 @@ public class TitleTest extends BaseTest {
      */
     @Test
     @Issue("---")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
-    @Owner("Kirill")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/")
     @DisplayName("Кнопоки навигации курсов")
-    @Epic("Блок - U")
     @Story("Главная Страница")
     @Feature("Проверка кнопокок навигации курсов")
     @Severity(SeverityLevel.BLOCKER)
@@ -79,10 +75,8 @@ public class TitleTest extends BaseTest {
      */
     @Test
     @Issue("---")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/")
-    @Owner("Kirill")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/")
     @DisplayName("Видимость контактной информации в подвале страницы")
-    @Epic("Блок - U")
     @Story("Главная Страница")
     @Feature("Проверка видимости контактной информации в подвале страницы")
     @Severity(SeverityLevel.BLOCKER)

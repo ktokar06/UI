@@ -10,17 +10,17 @@ import org.testng.annotations.Test;
 /**
  * Класс для тестирования различных сценариев входа в систему с использованием разных наборов данных.
  */
+@Owner("Kirill")
+@Epic("Блок - U")
 public class DataProviderTest extends BaseTest{
 
     /**
      * Тест для проверки авторизации с разными данными.
      */
     @Test(dataProvider = "testData", dataProviderClass = DataProviderExample.class)
-    @Issue("5")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Tokar Kirill")
+    @Issue("---")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Проверка авторизации с разными данными")
-    @Epic("Блок - U")
     @Story("Авторизация")
     @Feature("Проверка авторизации с разнными данными")
     @Severity(SeverityLevel.BLOCKER)

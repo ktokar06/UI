@@ -12,6 +12,8 @@ import static com.example.autotests.config.MyConfig.*;
 /**
  * Класс для проведения тестов авторизации.
  */
+@Epic("Блок - U")
+@Owner("Kirill")
 public class AuthorizationTests extends BaseTest {
 
     /**
@@ -19,10 +21,8 @@ public class AuthorizationTests extends BaseTest {
      */
     @Test
     @Issue("---")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Kirill")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Видимость полей")
-    @Epic("Блок - U")
     @Story("Авторизация")
     @Feature("Проверка видимости полей")
     @Severity(SeverityLevel.NORMAL)
@@ -39,10 +39,8 @@ public class AuthorizationTests extends BaseTest {
      */
     @Test
     @Issue("---")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Kirill")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Вход с правильными данными")
-    @Epic("Блок - U")
     @Story("Авторизация")
     @Feature("Проверка входа с правильными данными")
     @Severity(SeverityLevel.CRITICAL)
@@ -62,10 +60,8 @@ public class AuthorizationTests extends BaseTest {
      */
     @Test
     @Issue("---")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Kirill")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Вход с неправильными данными")
-    @Epic("Блок - U")
     @Story("Авторизация")
     @Feature("Проверка входа с неправильными данными")
     @Severity(SeverityLevel.MINOR)
@@ -85,10 +81,8 @@ public class AuthorizationTests extends BaseTest {
      */
     @Test
     @Issue("---")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Kirill")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Выход после входа в аккаунт")
-    @Epic("Блок - U")
     @Story("Авторизация")
     @Feature("Проверка выхода после входа в аккаунт")
     @Severity(SeverityLevel.TRIVIAL)
