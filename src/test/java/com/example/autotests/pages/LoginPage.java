@@ -127,16 +127,4 @@ public class LoginPage extends BasePage {
     public WebElement getSubmitButton() {
         return submitButton;
     }
-
-    /**
-     * Проверяет, выполнен ли успешный вход в систему.
-     *
-     * @param driver Экземпляр веб-драйвера, необходимый для проверки состояния страницы.
-     * @return {@code true}, если пользователь успешно вошел в систему, иначе {@code false}.
-     */
-    @Step("Проверить, выполнен ли успешный вход в систему")
-    public boolean isLoggedIn(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        return WaitUtils.waitForElementPresence(wait);
-    }
 }

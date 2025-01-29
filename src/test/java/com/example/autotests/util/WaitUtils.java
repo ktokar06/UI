@@ -36,10 +36,10 @@ public class WaitUtils {
      */
     public static boolean scrollToLeft(WebDriverWait wait) {
         try {
-            WebElement coursesContainer = wait.until(ExpectedConditions.
+            WebElement previousCourseButton = wait.until(ExpectedConditions.
                     presenceOfElementLocated(By.cssSelector(".swiper-button-prev")));
 
-            BasePage.scrollToElementLeft(coursesContainer);
+            BasePage.scrollToElementLeft(previousCourseButton);
 
             return true;
         } catch (Exception e) {
@@ -55,10 +55,10 @@ public class WaitUtils {
      */
     public static boolean scrollToRight(WebDriverWait wait) {
         try {
-            WebElement coursesContainer = wait.until(ExpectedConditions
+            WebElement nextCourseButton = wait.until(ExpectedConditions
                     .presenceOfElementLocated(By.cssSelector(".swiper-button-next")));
 
-            BasePage.scrollToElementRight(coursesContainer);
+            BasePage.scrollToElementRight(nextCourseButton);
 
             return true;
         } catch (Exception e) {

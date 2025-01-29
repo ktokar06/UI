@@ -295,16 +295,4 @@ public class TitlePage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         return WaitUtils.scrollToDown(wait);
     }
-
-    /**
-     * Проверяет, что страница "Lifetime Membership Club" доступна и загружена правильно.
-     *
-     * @param driver Веб-драйвер, используемый для управления браузером.
-     * @return {@code true}, если страница загружена успешно, иначе {@code false}.
-     */
-    @Step("Проверка доступности и корректной загрузки страницы Lifetime Membership Club")
-    public boolean checkLifeTime(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        return WaitUtils.waitForElementPresenceTitle(wait);
-    }
 }
