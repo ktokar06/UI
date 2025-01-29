@@ -102,6 +102,17 @@ public class BasePage {
      */
     @Step("Проверка доступности и корректной загрузки страницы Lifetime Membership Club")
     public boolean checkLifeTime(WebDriver driver) {
+        boolean allCoursesPresent = WaitUtils.waitForElementPresence(driver, By.linkText("All Courses"));
+        boolean lifetimeMembershipPresent = WaitUtils.waitForElementPresence(driver, By.linkText("Lifetime Membership"));
+
+        if (allCoursesPresent) {
+            driver.findElement(By.linkText("All Courses")).click();
+        }
+
+        if (lifetimeMembershipPresent) {
+            driver.findElement(By.linkText("Lifetime Membership")).click();
+        }
+
         return WaitUtils.waitForElementPresence(driver, By.cssSelector(".elementor-heading-title"));
     }
 }
