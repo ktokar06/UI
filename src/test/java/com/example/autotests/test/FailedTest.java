@@ -7,7 +7,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-/**Этот класс предназначен для выполнения тестов, которые должны завершиться неудачей.**/
+/**
+ * Этот класс предназначен для выполнения тестов, которые должны завершиться неудачей.
+ */
 @Owner("Kirill")
 @Epic("Блок - U")
 public class FailedTest extends BaseTest {

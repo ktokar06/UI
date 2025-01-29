@@ -6,9 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 /**
  * Класс представляет главную страницу сайта и содержит элементы, необходимые для тестирования.
@@ -268,8 +265,8 @@ public class TitlePage extends BasePage {
      */
     @Step("Прокрутить страницу влево")
     public boolean clickLeft(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        return WaitUtils.scrollToLeft(wait);
+        scrollToElementLeft(previousCourseButton);
+        return false;
     }
 
     /**
@@ -280,19 +277,19 @@ public class TitlePage extends BasePage {
      */
     @Step("Прокрутить страницу вправо")
     public boolean clickRight(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        return WaitUtils.scrollToRight(wait);
+        scrollToElementRight(nextCourseButton);
+        return false;
     }
 
     /**
-     * Нажатие кнопки для прокрутки страницы вниз.
+     * Прокручивает страницу браузера вниз на 500 пикселей относительно текущего положения окна.
      *
      * @param driver Веб-драйвер, используемый для управления браузером.
      * @return {@code true}, если прокрутка выполнена успешно, иначе {@code false}.
      */
     @Step("Прокрутка страницы вниз")
     public boolean clickDown(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        return WaitUtils.scrollToDown(wait);
+        scrollToElementDown(courseList);
+        return false;
     }
 }

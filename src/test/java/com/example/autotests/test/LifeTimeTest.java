@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 @Owner("Kirill")
 @Epic("Блок - U")
 public class LifeTimeTest extends BaseTest {
+
     /**
      * Проверяет, что переход по ссылке в меню навигации приводит к открытию страницы "Lifetime Membership Club".
      */

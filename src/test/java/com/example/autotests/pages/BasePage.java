@@ -2,13 +2,11 @@ package com.example.autotests.pages;
 
 import com.example.autotests.util.WaitUtils;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 /**
  * Базовый класс для всех страниц приложения.
@@ -60,6 +58,8 @@ public class BasePage {
 
     /**
      * Прокрутка страницы влево
+     *
+     * @return
      */
     @Step("Прокрутка страницы влево")
     public static void scrollToElementLeft(WebElement previousCourseButton) {
@@ -85,6 +85,16 @@ public class BasePage {
     }
 
     /**
+     * Проверяет, выполнен ли успешный вход в систему.
+     *
+     * @return {@code true}, если пользователь успешно вошел в систему, иначе {@code false}.
+     */
+    @Step("Проверить, выполнен ли успешный вход в систему")
+    public boolean isLoggedIn(WebDriver driver) {
+        return WaitUtils.waitForElementPresence(driver, By.cssSelector(".ng-scope"));
+    }
+
+    /**
      * Проверяет, что страница "Lifetime Membership Club" доступна и загружена правильно.
      *
      * @param driver Веб-драйвер, используемый для управления браузером.
@@ -92,19 +102,6 @@ public class BasePage {
      */
     @Step("Проверка доступности и корректной загрузки страницы Lifetime Membership Club")
     public boolean checkLifeTime(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        return WaitUtils.waitForElementPresenceTitle(wait);
-    }
-
-    /**
-     * Проверяет, выполнен ли успешный вход в систему.
-     *
-     * @param driver Экземпляр веб-драйвера, необходимый для проверки состояния страницы.
-     * @return {@code true}, если пользователь успешно вошел в систему, иначе {@code false}.
-     */
-    @Step("Проверить, выполнен ли успешный вход в систему")
-    public boolean isLoggedIn(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        return WaitUtils.waitForElementPresence(wait);
+        return WaitUtils.waitForElementPresence(driver, By.cssSelector(".elementor-heading-title"));
     }
 }
