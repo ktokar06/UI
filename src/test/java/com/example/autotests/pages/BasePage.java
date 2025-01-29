@@ -57,13 +57,11 @@ public class BasePage {
     }
 
     /**
-     * Прокрутка страницы влево
-     *
-     * @return
+     * Прокрутка страницы влев
      */
     @Step("Прокрутка страницы влево")
     public static void scrollToElementLeft(WebElement previousCourseButton) {
-        jsExecutor.executeScript("window.scrollBy(500,0)", previousCourseButton);
+        jsExecutor.executeScript("window.scrollBy(-500,0)", previousCourseButton);
     }
 
     /**
@@ -71,7 +69,7 @@ public class BasePage {
      */
     @Step("Прокрутка страницы вправо")
     public static void scrollToElementRight(WebElement nextCourseButton) {
-        jsExecutor.executeScript("window.scrollBy(500,0)", nextCourseButton);
+        jsExecutor.executeScript("window.scrollBy(5000,0)", nextCourseButton);
     }
 
     /**

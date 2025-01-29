@@ -1,8 +1,6 @@
 package com.example.autotests.pages;
 
-import com.example.autotests.util.WaitUtils;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -285,7 +283,7 @@ public class TitlePage extends BasePage {
      * Прокручивает страницу браузера вниз на 500 пикселей относительно текущего положения окна.
      *
      * @param driver Веб-драйвер, используемый для управления браузером.
-     * @return {@code true}, если прокрутка выполнена успешно, иначе {@code false}.
+     * @return
      */
     @Step("Прокрутка страницы вниз")
     public boolean clickDown(WebDriver driver) {
