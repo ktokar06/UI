@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Test Suite">
+    <test name="Test Suite 1">
+        <classes>
+            <class name="com.example.autotests.test.AuthorizationTests" />
+        </classes>
+    </test>
+    <test name="Test Suite 2">
+        <classes>
+            <class name="com.example.autotests.test.Tests" />
+        </classes>
+    </test>
+</suite>
