@@ -57,7 +57,7 @@ public class BasePage {
     }
 
     /**
-     * Прокрутка страницы влев
+     * Прокрутка страницы влево
      */
     @Step("Прокрутка страницы влево")
     public static void scrollToElementLeft(WebElement previousCourseButton) {

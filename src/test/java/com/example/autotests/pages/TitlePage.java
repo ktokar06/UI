@@ -283,7 +283,7 @@ public class TitlePage extends BasePage {
      * Прокручивает страницу браузера вниз на 500 пикселей относительно текущего положения окна.
      *
      * @param driver Веб-драйвер, используемый для управления браузером.
-     * @return
+     * @return {@code true}, если прокрутка выполнена успешно, иначе {@code false}.
      */
     @Step("Прокрутка страницы вниз")
     public boolean clickDown(WebDriver driver) {
