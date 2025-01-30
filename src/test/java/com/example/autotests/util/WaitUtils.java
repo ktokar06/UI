@@ -9,8 +9,6 @@ import java.time.Duration;
 
 public class WaitUtils {
 
-    private static final int TIME = 10;
-
     /**
      * Ожидает появления элемента на странице.
      *
@@ -19,7 +17,7 @@ public class WaitUtils {
      * @return {@code true}, если элемент появился, иначе {@code false}.
      */
     public static boolean waitForElementPresence(WebDriver driver, By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIME));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
             return true;
