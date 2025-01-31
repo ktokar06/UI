@@ -38,6 +38,7 @@ public class HomePage extends BasePage {
      *
      * @return Элемент ссылки для выхода из системы.
      */
+    @Step("Получение элемента ссылки для выхода из системы")
     public WebElement getLogoutLink() {
         return logoutLink;
     }

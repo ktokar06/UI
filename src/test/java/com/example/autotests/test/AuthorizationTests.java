@@ -7,35 +7,26 @@ import org.junit.jupiter.api.DisplayName;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static com.example.autotests.config.MyConfig.*;
+
 /**
  * Класс для проведения тестов авторизации.
  */
+@Epic("Блок - U")
+@Owner("Kirill")
 public class AuthorizationTests extends BaseTest {
-
-    public static final String URL = "https://www.way2automation.com/angularjs-protractor/registeration/#/login";
-
-    private static final String VALID_USERNAME = "angular";
-    private static final String VALID_PASSWORD = "password";
-    private static final String VALID_USERNAME_DESCRIPTION = "hello";
-
-    private static final String INVALID_USERNAME = "user";
-    private static final String INVALID_PASSWORD = "pass24word";
-    private static final String INVALID_USERNAME_DESCRIPTION = "description";
-
 
     /**
      * Тест для проверки видимости полей.
      */
     @Test
-    @Issue("1")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Tokar Kirill")
-    @DisplayName("Проверка видимости полей")
-    @Epic("Блок - U")
+    @Issue("---")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
+    @DisplayName("Видимость полей")
     @Story("Авторизация")
     @Feature("Проверка видимости полей")
-    @Severity(SeverityLevel.BLOCKER)
-    public void visibilityCheck() {
+    @Severity(SeverityLevel.NORMAL)
+    public void visibilityCheckTest() {
         LoginPage loginPage = new LoginPage(getDriver());
 
         Assert.assertTrue(loginPage.getUsername().isDisplayed());
@@ -47,14 +38,12 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверки авторизации с правильными данными.
      */
     @Test
-    @Issue("2")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Tokar Kirill")
+    @Issue("---")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Вход с правильными данными")
-    @Epic("Блок - U")
     @Story("Авторизация")
     @Feature("Проверка входа с правильными данными")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.CRITICAL)
     public void validCredentialsTest() {
         LoginPage loginPage = new LoginPage(getDriver());
 
@@ -70,14 +59,12 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверки авторизации с неправильными данными.
      */
     @Test
-    @Issue("3")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Tokar Kirill")
+    @Issue("---")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Вход с неправильными данными")
-    @Epic("Блок - U")
     @Story("Авторизация")
     @Feature("Проверка входа с неправильными данными")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.MINOR)
     public void invalidCredentialsTest() {
         LoginPage loginPage = new LoginPage(getDriver());
 
@@ -93,14 +80,12 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверка Logout после авторизации в аккаунт.
      */
     @Test
-    @Issue("4")
-    @Link(name = "Ссылка на баг", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @Owner("Tokar Kirill")
+    @Issue("---")
+    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Выход после входа в аккаунт")
-    @Epic("Блок - U")
     @Story("Авторизация")
     @Feature("Проверка выхода после входа в аккаунт")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.TRIVIAL)
     public void logoutAfterLoginTest() {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.setUsername(VALID_USERNAME);

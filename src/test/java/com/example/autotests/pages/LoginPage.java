@@ -2,9 +2,13 @@ package com.example.autotests.pages;
 
 import com.example.autotests.util.WaitUtils;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 /**
  * Класс, представляющий страницу входа в веб-приложение.
@@ -60,6 +64,7 @@ public class LoginPage extends BasePage {
      *
      * @return Элемент поля для ввода имени пользователя.
      */
+    @Step("Получение элемента поля для ввода имени пользователя")
     public WebElement getUsername() {
         return username;
     }
@@ -80,6 +85,7 @@ public class LoginPage extends BasePage {
      *
      * @return Элемент поля для ввода пароля.
      */
+    @Step("Получение элемента поля для ввода пароля")
     public WebElement getPassword() {
         return password;
     }
@@ -100,6 +106,7 @@ public class LoginPage extends BasePage {
      *
      * @return Элемент поля для ввода описания имени пользователя.
      */
+    @Step("Получение элемента поля для ввода описания имени пользователя")
     public WebElement getUsernameDescription() {
         return usernameDescription;
     }
@@ -117,18 +124,8 @@ public class LoginPage extends BasePage {
      *
      * @return Элемент кнопки для отправки формы входа.
      */
+    @Step("Получение элемента кнопки для отправки формы входа")
     public WebElement getSubmitButton() {
         return submitButton;
-    }
-
-    /**
-     * Проверяет, выполнен ли успешный вход в систему.
-     *
-     * @param driver Экземпляр веб-драйвера, необходимый для проверки состояния страницы.
-     * @return {@code true}, если пользователь успешно вошел в систему, иначе {@code false}.
-     */
-    @Step("Проверить, выполнен ли успешный вход в систему")
-    public boolean isLoggedIn(WebDriver driver) {
-        return WaitUtils.waitForElementPresence(driver);
     }
 }

@@ -7,22 +7,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-/**
- * Предоставляет методы для ожидания выполнения различных условий перед продолжением выполнения тестов.
- */
 public class WaitUtils {
 
     /**
-     * Ожидается появление элемента на странице.
+     * Ожидает появления элемента на странице.
      *
-     * @param driver Веб-драйвер.
+     * @param driver Веб-драйвер, используемый для управления браузером.
+     * @param locator Локатор элемента, который необходимо ожидать.
      * @return {@code true}, если элемент появился, иначе {@code false}.
      */
-    public static boolean waitForElementPresence(WebDriver driver) {
+    public static boolean waitForElementPresence(WebDriver driver, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         try {
-            wait.until(ExpectedConditions.
-                    visibilityOfElementLocated(By.className("ng-scope")));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
             return true;
         } catch (Exception e) {
             return false;
