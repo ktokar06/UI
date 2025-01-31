@@ -51,9 +51,9 @@ public class AuthorizationTests extends BaseTest {
     public void validCredentialsTest() {
         LoginPage loginPage = new LoginPage(getDriver());
 
-        loginPage.setUsername(INVALID_USERNAME)
-                .setPassword(INVALID_PASSWORD)
-                .setUsernameDescription(INVALID_USERNAME_DESCRIPTION)
+        loginPage.setUsername(VALID_USERNAME)
+                .setPassword(VALID_PASSWORD)
+                .setUsernameDescription(VALID_USERNAME_DESCRIPTION)
                 .setClickLoginButton();
 
         Assert.assertTrue(loginPage.isLoggedIn(getDriver()), "You're logged in!!");
@@ -93,9 +93,9 @@ public class AuthorizationTests extends BaseTest {
     public void logoutAfterLoginTest() {
         LoginPage loginPage = new LoginPage(getDriver());
 
-        loginPage.setUsername(INVALID_USERNAME)
-                .setPassword(INVALID_PASSWORD)
-                .setUsernameDescription(INVALID_USERNAME_DESCRIPTION)
+        loginPage.setUsername(VALID_USERNAME)
+                .setPassword(VALID_PASSWORD)
+                .setUsernameDescription(VALID_USERNAME_DESCRIPTION)
                 .setClickLoginButton();
 
         HomePage homePage = new HomePage(getDriver());
