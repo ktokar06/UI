@@ -11,6 +11,7 @@ public class TestNgRetry implements IRetryAnalyzer {
     @Override
     public boolean retry(ITestResult result) {
         if(!result.isSuccess()){
+            System.out.println("Тест упал! Попытка №" + (count + 1));
             if(count < maxCount){
                 count++;
                 return true;
@@ -18,4 +19,5 @@ public class TestNgRetry implements IRetryAnalyzer {
         }
         return false;
     }
+
 }
