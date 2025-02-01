@@ -92,13 +92,13 @@ public class AuthorizationTests extends BaseTest {
     @Severity(SeverityLevel.TRIVIAL)
     public void logoutAfterLoginTest() {
         LoginPage loginPage = new LoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
 
         loginPage.setUsername(VALID_USERNAME)
                 .setPassword(VALID_PASSWORD)
                 .setUsernameDescription(VALID_USERNAME_DESCRIPTION)
                 .setClickLoginButton();
 
-        HomePage homePage = new HomePage(getDriver());
         homePage.setLogoutLink();
 
         Assert.assertTrue(loginPage.isLoggedIn(getDriver()));
