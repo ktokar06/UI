@@ -6,8 +6,13 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestContext;
+import org.testng.ITestNGListener;
+import org.testng.ITestNGMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+
 import java.time.Duration;
 
 import static com.example.autotests.config.MyConfig.URL_LOGIN;
@@ -35,8 +40,15 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        //driver.get(URL_LOGIN);
-        driver.get(URL_TITLE);
+        driver.get(URL_LOGIN);
+        //driver.get(URL_TITLE);
+    }
+
+    @BeforeSuite
+    public void set(ITestContext context){
+        for(ITestNGMethod method: context.getAllTestMethods()){
+            method.setRetryAnalyzerClass(TestNgRetry.class);
+        }
     }
 
     /**
