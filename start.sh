@@ -1,3 +1,4 @@
+#!/bin/bash
 SET USER=user
 SET WD_PORT=4444
 
