@@ -1,4 +1,4 @@
-package com.example.autotests.test;
+package com.example.autotests.util;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
@@ -7,7 +7,7 @@ import org.testng.ITestResult;
  * Реализация интерфейса {@link IRetryAnalyzer}, которая определяет стратегию повтора тестов в случае их провала.
  * Этот класс используется для автоматического перезапуска тестов, которые потерпели неудачу, до достижения максимального количества попыток.
  */
-public class TestNgRetry implements IRetryAnalyzer {
+public class NgRetry implements IRetryAnalyzer {
 
     /**
      * Текущий счетчик попыток перезапуска теста.

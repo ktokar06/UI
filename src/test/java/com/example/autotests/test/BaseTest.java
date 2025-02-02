@@ -1,5 +1,6 @@
 package com.example.autotests.test;
 
+import com.example.autotests.util.NgRetry;
 import io.qameta.allure.Step;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
@@ -15,7 +16,6 @@ import org.testng.annotations.BeforeSuite;
 import java.time.Duration;
 
 import static com.example.autotests.config.MyConfig.URL_LOGIN;
-import static com.example.autotests.config.MyConfig.URL_TITLE;
 
 /**
  * Базовый класс для всех тестов.
@@ -46,7 +46,7 @@ public class BaseTest {
     @BeforeSuite
     public void retry(ITestContext context){
         for(ITestNGMethod method: context.getAllTestMethods()){
-            method.setRetryAnalyzerClass(TestNgRetry.class);
+            method.setRetryAnalyzerClass(NgRetry.class);
         }
     }
 
