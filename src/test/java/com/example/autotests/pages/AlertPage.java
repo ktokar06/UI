@@ -8,13 +8,13 @@ import org.openqa.selenium.support.FindBy;
 public class AlertPage extends BasePage{
 
 
-    @FindBy(css = "li:active a")
+    @FindBy(css = ".responsive-tabs-default .responsive-tabs li:last-child")
     private WebElement inputButtonAlert;
 
-    @FindBy(css = "button")
+    @FindBy(xpath = "/html/body/button")
     private WebElement buttonAlertBox;
 
-    @FindBy(css = ".demo-frame")
+    @FindBy(xpath = "//*[@id=\"demo\"]")
     private WebElement text;
 
     /**
@@ -87,7 +87,7 @@ public class AlertPage extends BasePage{
     }
 
     /**
-     * Шаг для перехода  на кнопку алерта.
+     * Шаг для перехода на кнопку алерта.
      */
     @Step("Перход на страницу InputAlert")
     public void clickOnInputButtonAlert() {

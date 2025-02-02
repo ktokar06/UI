@@ -5,21 +5,29 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.testng.annotations.Test;
 
+/**
+ * Класс для тестирования функционала алертов на странице.
+ * Этот класс содержит методы для проверки различных аспектов работы алертов,
+ * таких как открытие алертов, ввод текста и проверка результатов.
+ */
 @Epic("Блок - U")
 @Owner("Kirill")
 public class AlertTest extends BaseTest {
 
-    @Test
-    @Issue("---")
-    @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
-    @DisplayName("Видимость полей")
-    @Story("Авторизация")
-    @Feature("Проверка видимости полей")
+    /**
+     * Test для проверки работы алертов на странице.
+     */
+    @Test(description = "Проверка работы алертов на странице")
+    @Description("Тестирование функционала алертов на странице")
+    @Link(name = "Страница проверяемая тестом", url = "https://way2automation.com/way2auto_jquery/alert.php#load_box")
+    @DisplayName("Тестирование алертов")
+    @Story("Работа с алертами")
     @Severity(SeverityLevel.NORMAL)
-    public void testAlerts(){
+    public void checkAlertsFunctionality(){
         AlertPage alert = new AlertPage(getDriver());
 
         alert.clickOnInputButtonAlert();
+        alert.openAlertBox();
 
     }
 }

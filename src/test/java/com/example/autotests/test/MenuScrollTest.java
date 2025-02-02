@@ -17,7 +17,6 @@ public class MenuScrollTest extends BaseTest {
      * Тест для проверки Отображения меню при скроллинге страницы вниз.
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/")
     @DisplayName("Отображение меню при скроллинге страницы вниз")
     @Story("Главная Страница")

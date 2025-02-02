@@ -21,7 +21,6 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверки видимости полей.
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Видимость полей")
     @Story("Авторизация")
@@ -42,7 +41,6 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверки авторизации с правильными данными.
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Вход с правильными данными")
     @Story("Авторизация")
@@ -63,7 +61,6 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверки авторизации с неправильными данными.
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Вход с неправильными данными")
     @Story("Авторизация")
@@ -84,7 +81,6 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверка Logout после авторизации в аккаунт.
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Выход после входа в аккаунт")
     @Story("Авторизация")
