@@ -3,7 +3,6 @@ package com.example.autotests.test;
 import com.example.autotests.pages.LoginPage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 

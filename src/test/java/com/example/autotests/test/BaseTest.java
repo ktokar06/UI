@@ -44,7 +44,7 @@ public class BaseTest {
     }
 
     @BeforeSuite
-    public void set(ITestContext context){
+    public void retry(ITestContext context){
         for(ITestNGMethod method: context.getAllTestMethods()){
             method.setRetryAnalyzerClass(TestNgRetry.class);
         }
