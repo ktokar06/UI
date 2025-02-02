@@ -26,10 +26,11 @@ public class DataProviderTest extends BaseTest{
     @Severity(SeverityLevel.BLOCKER)
     public void verifyLoginWithDifferentCredentials(String firstName, String lastName, String usernameDescription) {
         LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.setUsername(firstName);
-        loginPage.setPassword(lastName);
-        loginPage.setUsernameDescription(usernameDescription);
-        loginPage.setClickLoginButton();
+
+        loginPage.setUsername(firstName)
+                .setPassword(lastName)
+                .setUsernameDescription(usernameDescription)
+                .setClickLoginButton();
 
         Assert.assertTrue(loginPage.isLoggedIn(getDriver()));
     }

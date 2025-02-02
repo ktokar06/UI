@@ -5,6 +5,7 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 
 /**
@@ -25,9 +26,12 @@ public class FailedTest extends BaseTest {
     @Feature("Проверка видимости полей")
     public void visibilityCheck() {
         LoginPage loginPage = new LoginPage(getDriver());
+        SoftAssert softAssert = new SoftAssert();
 
-        Assert.assertFalse(loginPage.getUsername().isDisplayed());
-        Assert.assertFalse(loginPage.getPassword().isDisplayed());
-        Assert.assertFalse(loginPage.getSubmitButton().isEnabled());
+        softAssert.assertFalse(loginPage.getUsername().isDisplayed());
+        softAssert.assertFalse(loginPage.getPassword().isDisplayed());
+        softAssert.assertFalse(loginPage.getSubmitButton().isEnabled());
+
+        softAssert.assertAll();
     }
 }

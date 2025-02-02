@@ -1,14 +1,9 @@
 package com.example.autotests.pages;
 
-import com.example.autotests.util.WaitUtils;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 /**
  * Класс, представляющий страницу входа в веб-приложение.
@@ -52,11 +47,13 @@ public class LoginPage extends BasePage {
      * Вводит имя пользователя в соответствующее поле.
      *
      * @param username Имя пользователя для ввода.
+     * @return Эта страница (для цепочки вызовов).
      */
     @Step("Заполнить поле 'Имя пользователя' значением '{username}'")
-    public void setUsername(String username) {
+    public LoginPage setUsername(String username) {
         this.username.clear();
         this.username.sendKeys(username);
+        return this;
     }
 
     /**
@@ -73,11 +70,13 @@ public class LoginPage extends BasePage {
      * Вводит пароль в соответствующее поле.
      *
      * @param password Пароль для ввода.
+     * @return Эта страница (для цепочки вызовов).
      */
     @Step("Заполнить поле 'Пароль' значением '{password}'")
-    public void setPassword(String password) {
+    public LoginPage setPassword(String password) {
         this.password.clear();
         this.password.sendKeys(password);
+        return this;
     }
 
     /**
@@ -94,11 +93,13 @@ public class LoginPage extends BasePage {
      * Вводит описание имени пользователя в соответствующее поле.
      *
      * @param description Описание имени пользователя для ввода.
+     * @return Эта страница (для цепочки вызовов).
      */
     @Step("Заполнить поле 'Описание пользователя' значением '{description}'")
-    public void setUsernameDescription(String description) {
+    public LoginPage setUsernameDescription(String description) {
         this.usernameDescription.clear();
         this.usernameDescription.sendKeys(description);
+        return this;
     }
 
     /**
@@ -113,10 +114,13 @@ public class LoginPage extends BasePage {
 
     /**
      * Нажимает кнопку для отправки формы входа.
+     *
+     * @return Эта страница (для цепочки вызовов).
      */
     @Step("Нажать кнопку 'Login'")
-    public void setClickLoginButton() {
+    public LoginPage setClickLoginButton() {
         this.submitButton.click();
+        return this;
     }
 
     /**
