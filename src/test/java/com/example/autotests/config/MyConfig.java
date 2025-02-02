@@ -44,4 +44,8 @@ public class MyConfig {
      * Описание невалидного пользователя.
      */
     public static final String INVALID_USERNAME_DESCRIPTION = "description";
+
+    public static final  String ALERT_URL = "http://way2automation.com/way2auto_jquery/alert.php";
+
+    public static final  String TEXT_ALERT = "K";
 }
