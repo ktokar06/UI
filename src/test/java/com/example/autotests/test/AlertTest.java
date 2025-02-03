@@ -7,8 +7,6 @@ import org.testng.annotations.Test;
 
 /**
  * Класс для тестирования функционала алертов на странице.
- * Этот класс содержит методы для проверки различных аспектов работы алертов,
- * таких как открытие алертов, ввод текста и проверка результатов.
  */
 @Epic("Блок - U")
 @Owner("Kirill")
@@ -29,6 +27,5 @@ public class AlertTest extends BaseTest {
         alertPage.clickOnInputButtonAlert();
         alertPage.openAlertBox();
         alertPage.isAlertTextPresent();
-
     }
 }
