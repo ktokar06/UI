@@ -44,4 +44,9 @@ public class MyConfig {
      * Описание невалидного пользователя.
      */
     public static final String INVALID_USERNAME_DESCRIPTION = "description";
+
+    /**
+     * Базовый URL для галереи аутентификации HTTPWatch.
+     */
+    public static final String BASIC_URL = "https://www.httpwatch.com/httpgallery/authentication/#showExample10";
 }
