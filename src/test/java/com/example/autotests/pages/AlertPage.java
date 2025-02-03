@@ -123,7 +123,7 @@ public class AlertPage extends BasePage{
 
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        alert.sendKeys("Selenuim Test!");
+        alert.sendKeys("Selenium Test!");
         alert.accept();
 
         getDriver().switchTo().defaultContent();
