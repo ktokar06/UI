@@ -7,16 +7,17 @@ import org.testng.annotations.Test;
 
 @Epic("Блок - U")
 @Owner("Kirill")
+
 public class BasicAuthTest extends BaseTest {
 
     /**
      * Test для проверки работы алертов на странице.
      */
-    @Test(description = "Проверка работы алертов на странице")
-    @Description("Тестирование функционала алертов на странице")
+    @Test
+    @Description("Тестирование авторизации на странице")
     @Link(name = "Страница проверяемая тестом", url = "https://www.httpwatch.com/httpgallery/authentication/#showExample10")
-    @DisplayName("Тестирование алертов")
-    @Story("Работа с алертами")
+    @DisplayName("Тестирование авторизации")
+    @Story("Работа с авторизацией")
     @Severity(SeverityLevel.NORMAL)
     public void checkAlertsFunctionality() {
         BasicAuthPage basicAuthPage = new BasicAuthPage(getDriver());
