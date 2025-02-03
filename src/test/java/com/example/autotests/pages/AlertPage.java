@@ -2,9 +2,11 @@ package com.example.autotests.pages;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -105,8 +107,7 @@ public class AlertPage extends BasePage{
      */
     @Step("Перход на страницу InputAlert")
     public void clickOnInputButtonAlert() {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(inputButtonAlert)).click();
+        inputButtonAlert.click();
     }
 
     /**
@@ -114,12 +115,17 @@ public class AlertPage extends BasePage{
      */
     @Step("Открыть алерт-бокс")
     public void openAlertBox() {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(buttonAlertBox)).click();
+        WebElement frameElement = getDriver().findElement(By.cssSelector("iframe[src='alert/input-alert.html']"));
+        getDriver().switchTo().frame(frameElement);
 
+        buttonAlertBox.click();
+
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        alert.sendKeys("Harry Potter!");
+        alert.sendKeys("Selenuim Test!");
         alert.accept();
+
+        getDriver().switchTo().defaultContent();
     }
 
     /**
@@ -127,8 +133,12 @@ public class AlertPage extends BasePage{
      */
     @Step("Проверить наличие текста алерта")
     public void isAlertTextPresent() {
+        WebElement frameElement = getDriver().findElement(By.cssSelector("iframe[src='alert/input-alert.html']"));
+        getDriver().switchTo().frame(frameElement);
+
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        WebElement textElement = wait.until(ExpectedConditions.visibilityOf(text));
-        Assert.assertTrue(textElement.isDisplayed(), "Текст алерта не отображается");
+        wait.until(ExpectedConditions.visibilityOf(text)).isDisplayed();
+
+        getDriver().switchTo().defaultContent();
     }
 }

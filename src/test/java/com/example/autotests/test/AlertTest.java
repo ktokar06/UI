@@ -29,5 +29,6 @@ public class AlertTest extends BaseTest {
         alertPage.clickOnInputButtonAlert();
         alertPage.openAlertBox();
         alertPage.isAlertTextPresent();
+
     }
 }
