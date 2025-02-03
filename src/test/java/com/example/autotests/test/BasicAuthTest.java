@@ -5,9 +5,11 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.testng.annotations.Test;
 
+/**
+ * Класс для тестирования базовой аутентификации.
+ */
 @Epic("Блок - U")
 @Owner("Kirill")
-
 public class BasicAuthTest extends BaseTest {
 
     /**
@@ -22,7 +24,7 @@ public class BasicAuthTest extends BaseTest {
     public void checkAlertsFunctionality() {
         BasicAuthPage basicAuthPage = new BasicAuthPage(getDriver());
 
-        basicAuthPage.openAlertBox();
-        basicAuthPage.isAlertTextPresent();
+        basicAuthPage.displayImageClick();
+        basicAuthPage.assertImageDisplayed();
     }
 }

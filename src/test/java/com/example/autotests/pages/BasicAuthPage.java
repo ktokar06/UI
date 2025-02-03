@@ -1,22 +1,25 @@
 package com.example.autotests.pages;
 
 import io.qameta.allure.Step;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.time.Duration;
-
+/**
+ * Страница с примером базовой аутентификации.
+ */
 public class BasicAuthPage extends BasePage {
 
+    /**
+     * Кнопка для отображения изображения.
+     */
     @FindBy(id = "displayImage")
     private WebElement buttonDisplay;
 
+    /**
+     * Элемент изображения, которое должно загрузиться после успешной аутентификации.
+     */
     @FindBy(id = "downloadImg")
     private WebElement downloadImg;
 
@@ -29,32 +32,55 @@ public class BasicAuthPage extends BasePage {
         super(driver);
     }
 
+    /**
+     * Возвращает элемент кнопки для отображения изображения.
+     *
+     * @return Веб-элемент кнопки.
+     */
     public WebElement getButtonDisplay() {
         return buttonDisplay;
     }
 
+    /**
+     * Устанавливает элемент кнопки для отображения изображения.
+     *
+     * @param buttonDisplay Новый веб-элемент кнопки.
+     */
     public void setButtonDisplay(WebElement buttonDisplay) {
         this.buttonDisplay = buttonDisplay;
     }
 
-    @Step("Открыть алерт-бокс")
-    public void openAlertBox() {
-        buttonDisplay.click();
-
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-
-        alert.sendKeys("httpwatch");
-        alert.accept();
-
-        getDriver().switchTo().defaultContent();
+    /**
+     * Возвращает элемент загруженного изображения.
+     *
+     * @return Веб-элемент изображения.
+     */
+    public WebElement getDownloadImg() {
+        return downloadImg;
     }
 
     /**
-     * Шаг для проверки наличия текста алерта.
+     * Устанавливает элемент загруженного изображения.
+     *
+     * @param downloadImg Новый веб-элемент изображения.
      */
-    @Step("Проверить наличие текста алерта")
-    public void isAlertTextPresent() {
+    public void setDownloadImg(WebElement downloadImg) {
+        this.downloadImg = downloadImg;
+    }
+
+    /**
+     * Нажатие на кнопку для отображения изображения.
+     */
+    @Step("Нажать на кнопку 'Display Image'")
+    public void displayImageClick() {
+        buttonDisplay.click();
+    }
+
+    /**
+     * Проверяет, отображается ли загруженное окно с авторизацией.
+     */
+    @Step("Проверить, что окно с авторизацией загружено")
+    public void assertImageDisplayed() {
         Assert.assertTrue(downloadImg.isDisplayed());
     }
 }
