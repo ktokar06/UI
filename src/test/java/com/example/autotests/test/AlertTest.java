@@ -15,7 +15,7 @@ public class AlertTest extends BaseTest {
     /**
      * Test для проверки работы алертов на странице.
      */
-    @Test(description = "Проверка работы алертов на странице")
+    @Test
     @Description("Тестирование функционала алертов на странице")
     @Link(name = "Страница проверяемая тестом", url = "https://way2automation.com/way2auto_jquery/alert.php#load_box")
     @DisplayName("Тестирование алертов")
