@@ -1,20 +1,34 @@
 package com.example.autotests.pages;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+
+import java.time.Duration;
 
 public class AlertPage extends BasePage{
 
-
+    /**
+     * Переход на страницу InputAlert
+     */
     @FindBy(css = ".responsive-tabs-default .responsive-tabs li:last-child")
     private WebElement inputButtonAlert;
 
+    /**
+     * Кнопка для открытия алерт-бокса.
+     */
     @FindBy(xpath = "/html/body/button")
     private WebElement buttonAlertBox;
 
-    @FindBy(xpath = "//*[@id=\"demo\"]")
+    /**
+     * Элемент для вывода текста.
+     */
+    @FindBy(id = "demo")
     private WebElement text;
 
     /**
@@ -91,7 +105,8 @@ public class AlertPage extends BasePage{
      */
     @Step("Перход на страницу InputAlert")
     public void clickOnInputButtonAlert() {
-        inputButtonAlert.click();
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(inputButtonAlert)).click();
     }
 
     /**
@@ -99,14 +114,21 @@ public class AlertPage extends BasePage{
      */
     @Step("Открыть алерт-бокс")
     public void openAlertBox() {
-        buttonAlertBox.click();
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(buttonAlertBox)).click();
+
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        alert.sendKeys("Harry Potter!");
+        alert.accept();
     }
 
     /**
      * Шаг для проверки наличия текста алерта.
      */
     @Step("Проверить наличие текста алерта")
-    public boolean isAlertTextPresent() {
-        return text.isDisplayed();
+    public void isAlertTextPresent() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        WebElement textElement = wait.until(ExpectedConditions.visibilityOf(text));
+        Assert.assertTrue(textElement.isDisplayed(), "Текст алерта не отображается");
     }
 }

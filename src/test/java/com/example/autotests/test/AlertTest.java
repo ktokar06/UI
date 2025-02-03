@@ -24,10 +24,10 @@ public class AlertTest extends BaseTest {
     @Story("Работа с алертами")
     @Severity(SeverityLevel.NORMAL)
     public void checkAlertsFunctionality(){
-        AlertPage alert = new AlertPage(getDriver());
+        AlertPage alertPage = new AlertPage(getDriver());
 
-        alert.clickOnInputButtonAlert();
-        alert.openAlertBox();
-
+        alertPage.clickOnInputButtonAlert();
+        alertPage.openAlertBox();
+        alertPage.isAlertTextPresent();
     }
 }
