@@ -6,11 +6,6 @@ package com.example.autotests.config;
 public class MyConfig {
 
     /**
-     * URL Tabs.
-     */
-    public static final String URL_TABS = "http://way2automation.com/way2auto_jquery/frames-and-windows.php";
-
-    /**
      * URL страницы входа.
      */
     public static final String URL_LOGIN = "https://www.way2automation.com/angularjs-protractor/registeration/#/login";
