@@ -6,6 +6,11 @@ package com.example.autotests.config;
 public class MyConfig {
 
     /**
+     * URL страницы с алертами, используемый в тестовых сценариях.
+     */
+    public static final  String URL_ALERT = "http://way2automation.com/way2auto_jquery/alert.php";
+
+    /**
      * URL страницы входа.
      */
     public static final String URL_LOGIN = "https://www.way2automation.com/angularjs-protractor/registeration/#/login";
@@ -44,9 +49,4 @@ public class MyConfig {
      * Описание невалидного пользователя.
      */
     public static final String INVALID_USERNAME_DESCRIPTION = "description";
-
-    /**
-     * URL страницы с алертами, используемый в тестовых сценариях.
-     */
-    public static final  String ALERT_URL = "http://way2automation.com/way2auto_jquery/alert.php";
 }
