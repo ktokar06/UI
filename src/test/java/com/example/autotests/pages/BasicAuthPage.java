@@ -47,11 +47,11 @@ public class BasicAuthPage extends BasePage {
      */
     @Step("Нажать на кнопку 'Display Image' и ввести логин '{username}' и пароль '{password}'")
     public void displayImageClick(String username, String password) {
-        buttonDisplay.click();
-
         String currentUrl = getDriver().getCurrentUrl();
-        String authUrl = currentUrl.replace("https://", "https://" + username + ":" + password + "@");
+        String authUrl = String.format("https://%s:%s@%s", username, password, currentUrl.substring(currentUrl.indexOf("//") + 2));
         getDriver().get(authUrl);
+
+        buttonDisplay.click();
     }
 
     /**
