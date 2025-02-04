@@ -6,7 +6,7 @@ package com.example.autotests.config;
 public class MyConfig {
 
     /**
-     * URL страницы с алертами, используемый в тестовых сценариях.
+     * URL страницы с алертами.
      */
     public static final  String URL_ALERT = "http://way2automation.com/way2auto_jquery/alert.php";
 
