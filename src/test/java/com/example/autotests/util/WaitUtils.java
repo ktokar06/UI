@@ -7,6 +7,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/**
+ * Утилитарный класс для ожидания различных состояний элементов на веб-странице.
+ */
 public class WaitUtils {
 
     /**
