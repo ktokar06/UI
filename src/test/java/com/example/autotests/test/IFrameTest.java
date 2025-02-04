@@ -3,7 +3,10 @@ package com.example.autotests.test;
 import com.example.autotests.pages.IFramePage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static com.example.autotests.config.MyConfig.URL_IFRAME;
 
 /**
  * Класс для проведения тестов, связанных с работой с iframe.
@@ -23,6 +26,7 @@ public class IFrameTest extends BaseTest{
     public void dragAndDropTest() {
         IFramePage framePage = new IFramePage(getDriver());
 
-        framePage.DragAndDropElement();
+        framePage.dragAndDropElement();
+        Assert.assertTrue(framePage.verifyDragAndDropSuccess());
     }
 }

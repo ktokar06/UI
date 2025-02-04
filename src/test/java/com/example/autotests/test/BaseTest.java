@@ -34,8 +34,6 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        //driver.get(URL_LOGIN);
-        //driver.get(URL_TITLE);
         driver.get(URL_IFRAME);
     }
 
