@@ -46,7 +46,7 @@ public class MyConfig {
     public static final String INVALID_USERNAME_DESCRIPTION = "description";
 
     /**
-     * URL IFrame.
+     * URL Tabs.
      */
     public static final String IFRAME_URL = "http://way2automation.com/way2auto_jquery/frames-and-windows.php";
 }
