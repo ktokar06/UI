@@ -6,6 +6,11 @@ package com.example.autotests.config;
 public class MyConfig {
 
     /**
+     * Базовый URL для галереи аутентификации HTTPWatch.
+     */
+    public static final String URL_BASIC = "https://www.httpwatch.com/httpgallery/authentication/#showExample10";
+
+    /**
      * URL страницы входа.
      */
     public static final String URL_LOGIN = "https://www.way2automation.com/angularjs-protractor/registeration/#/login";
@@ -44,11 +49,6 @@ public class MyConfig {
      * Описание невалидного пользователя.
      */
     public static final String INVALID_USERNAME_DESCRIPTION = "description";
-
-    /**
-     * Базовый URL для галереи аутентификации HTTPWatch.
-     */
-    public static final String BASIC_URL = "https://www.httpwatch.com/httpgallery/authentication/#showExample10";
 
     /**
      * Имя пользователя для авторизации.

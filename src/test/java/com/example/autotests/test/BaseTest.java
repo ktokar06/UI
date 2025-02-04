@@ -36,7 +36,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         //driver.get(URL_LOGIN);
         //driver.get(URL_TITLE);
-        driver.get(BASIC_URL);
+        driver.get(URL_BASIC);
     }
 
     /**
