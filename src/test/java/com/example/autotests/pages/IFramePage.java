@@ -34,7 +34,7 @@ public class IFramePage extends BasePage {
      *
      * @param driver Экземпляр веб-драйвера, необходимый для взаимодействия со страницей.
      */
-    public IFramePage(WebDriver driver, String url) {
+    public IFramePage(WebDriver driver) {
         super(driver);
     }
 
