@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Класс, представляющий страницу с iframe.
  */
-public class IFramePage extends BasePage {
+public class TabsPage extends BasePage {
 
     /**
      * Кнопка браузера на странице.
@@ -24,7 +24,7 @@ public class IFramePage extends BasePage {
      *
      * @param driver Экземпляр веб-драйвера, необходимый для взаимодействия со страницей.
      */
-    public IFramePage(WebDriver driver) {
+    public TabsPage(WebDriver driver) {
         super(driver);
     }
 

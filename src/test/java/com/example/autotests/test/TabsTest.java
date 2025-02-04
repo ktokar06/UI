@@ -1,6 +1,6 @@
 package com.example.autotests.test;
 
-import com.example.autotests.pages.IFramePage;
+import com.example.autotests.pages.TabsPage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.testng.annotations.Test;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
  */
 @Owner("Kirill")
 @Epic("Блок - U")
-public class IFrameTest extends BaseTest{
+public class TabsTest extends BaseTest{
 
     /**
      * Тест для проверки переноса фокуса на новую вкладку.
@@ -21,9 +21,9 @@ public class IFrameTest extends BaseTest{
     @Story("Работа с вкладками")
     @Feature("Переключение между вкладками")
     public void focusOnNewTab() {
-        IFramePage framePage = new IFramePage(getDriver());
+        TabsPage tabsPage = new TabsPage(getDriver());
 
-        framePage.openBrowser();
-        framePage.switchToNewTabAndClickLink();
+        tabsPage.openBrowser();
+        tabsPage.switchToNewTabAndClickLink();
     }
 }
