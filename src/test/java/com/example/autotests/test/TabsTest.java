@@ -22,7 +22,7 @@ public class TabsTest extends BaseTest{
     @Story("Работа с вкладками")
     @Feature("Переключение между вкладками")
     public void focusOnNewTab() {
-        TabsPage tabsPage = new TabsPage(getDriver(),"http://way2automation.com/way2auto_jquery/frames-and-windows.php");
+        TabsPage tabsPage = new TabsPage(getDriver());
 
         tabsPage.openBrowser();
         tabsPage.switchToNewTabAndClickLink();

@@ -29,9 +29,8 @@ public class TabsPage extends BasePage {
      * Конструктор страницы, инициализирующий элементы страницы.
      *
      * @param driver Экземпляр веб-драйвера, необходимый для взаимодействия со страницей.
-     * @param url
      */
-    public TabsPage(WebDriver driver, String url) {
+    public TabsPage(WebDriver driver) {
         super(driver);
     }
 
