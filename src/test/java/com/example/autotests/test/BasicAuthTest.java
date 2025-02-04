@@ -3,6 +3,7 @@ package com.example.autotests.test;
 import com.example.autotests.pages.BasicAuthPage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static com.example.autotests.config.MyConfig.PASSWORD;
@@ -28,5 +29,7 @@ public class BasicAuthTest extends BaseTest {
         BasicAuthPage basicAuthPage = new BasicAuthPage(getDriver());
 
         basicAuthPage.displayImageClick(USERNAME, PASSWORD);
+
+        Assert.assertTrue(basicAuthPage.isAuthorizationSuccessful(getDriver()));
     }
 }

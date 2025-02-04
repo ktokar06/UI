@@ -1,10 +1,11 @@
 package com.example.autotests.pages;
 
+import com.example.autotests.util.WaitUtils;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 /**
  * Страница с примером базовой аутентификации.
@@ -36,20 +37,31 @@ public class BasicAuthPage extends BasePage {
     }
 
     /**
-     * Устанавливает элемент кнопки для отображения изображения.
+     * Метод выполняет следующие шаги:
+     * 1. Получает текущий URL.
+     * 2. Формирует новый URL с включением логина и пароля.
+     * 3. Переходит по новому URL.
      *
-     * @param buttonDisplay Новый веб-элемент кнопки.
+     * @param username Логин пользователя.
+     * @param password Пароль пользователя.
      */
-    public void setButtonDisplay(WebElement buttonDisplay) {
-        this.buttonDisplay = buttonDisplay;
-    }
-
     @Step("Нажать на кнопку 'Display Image' и ввести логин '{username}' и пароль '{password}'")
     public void displayImageClick(String username, String password) {
+        buttonDisplay.click();
+
         String currentUrl = getDriver().getCurrentUrl();
         String authUrl = currentUrl.replace("https://", "https://" + username + ":" + password + "@");
         getDriver().get(authUrl);
+    }
 
-        buttonDisplay.click();
+    /**
+     * Метод проверяет успешность авторизации по наличию элемента,
+     * содержащего текст об успешной авторизации.
+     *
+     * @return true, если авторизация была успешной, иначе false.
+     */
+    @Step("Проверить успешность авторизации")
+    public boolean isAuthorizationSuccessful(WebDriver driver) {
+        return WaitUtils.waitForElementPresence(driver, By.id("downloadImg"));
     }
 }
