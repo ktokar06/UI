@@ -24,5 +24,6 @@ public class IFrameTest extends BaseTest{
         IFramePage framePage = new IFramePage(getDriver());
 
         framePage.openBrowser();
+        framePage.switchToNewTabAndClickLink();
     }
 }
