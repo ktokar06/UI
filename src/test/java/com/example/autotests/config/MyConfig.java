@@ -8,7 +8,7 @@ public class MyConfig {
     /**
      * URL Tabs.
      */
-    public static final String IFRAME_URL = "http://way2automation.com/way2auto_jquery/frames-and-windows.php";
+    public static final String URL_TABS = "http://way2automation.com/way2auto_jquery/frames-and-windows.php";
 
     /**
      * URL страницы входа.
