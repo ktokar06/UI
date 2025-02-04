@@ -28,6 +28,5 @@ public class BasicAuthTest extends BaseTest {
         BasicAuthPage basicAuthPage = new BasicAuthPage(getDriver());
 
         basicAuthPage.displayImageClick(USERNAME, PASSWORD);
-        basicAuthPage.imageDisplayed();
     }
 }

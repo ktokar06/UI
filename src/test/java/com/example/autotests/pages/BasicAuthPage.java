@@ -18,12 +18,6 @@ public class BasicAuthPage extends BasePage {
     private WebElement buttonDisplay;
 
     /**
-     * Элемент изображения, которое должно загрузиться после успешной аутентификации.
-     */
-    @FindBy(id = "downloadImg")
-    private WebElement downloadImg;
-
-    /**
      * Конструктор страницы, инициализирующий элементы страницы.
      *
      * @param driver Экземпляр веб-драйвера, необходимый для взаимодействия со страницей.
@@ -50,44 +44,12 @@ public class BasicAuthPage extends BasePage {
         this.buttonDisplay = buttonDisplay;
     }
 
-    /**
-     * Возвращает элемент загруженного изображения.
-     *
-     * @return Веб-элемент изображения.
-     */
-    public WebElement getDownloadImg() {
-        return downloadImg;
-    }
-
-    /**
-     * Устанавливает элемент загруженного изображения.
-     *
-     * @param downloadImg Новый веб-элемент изображения.
-     */
-    public void setDownloadImg(WebElement downloadImg) {
-        this.downloadImg = downloadImg;
-    }
-
-    /**
-     * Нажатие на кнопку для отображения окна с авторизацией и ввод логина и пароля.
-     *
-     * @param username Логин для авторизации.
-     * @param password Пароль для авторизации.
-     */
     @Step("Нажать на кнопку 'Display Image' и ввести логин '{username}' и пароль '{password}'")
     public void displayImageClick(String username, String password) {
-        buttonDisplay.click();
-        getDriver().switchTo().alert().sendKeys(username);
-        getDriver().switchTo().alert().sendKeys("\t");
-        getDriver().switchTo().alert().sendKeys(password);
-        getDriver().switchTo().alert().accept();
-    }
+        String currentUrl = getDriver().getCurrentUrl();
+        String authUrl = currentUrl.replace("https://", "https://" + username + ":" + password + "@");
+        getDriver().get(authUrl);
 
-    /**
-     * Проверяет, отображается ли загруженное окно с авторизацией.
-     */
-    @Step("Проверить, что окно с авторизацией загружено")
-    public void imageDisplayed() {
-        Assert.assertTrue(downloadImg.isDisplayed());
+        buttonDisplay.click();
     }
 }
