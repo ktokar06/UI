@@ -24,9 +24,10 @@ public class IFrameTest extends BaseTest{
     @Story("Работа с iframe")
     @Feature("Перетаскивание элемента")
     public void dragAndDropTest() {
-        IFramePage framePage = new IFramePage(getDriver());
+        IFramePage framePage = new IFramePage(getDriver(), "http://way2automation.com/way2auto_jquery/droppable.php");
 
         framePage.dragAndDropElement();
+
         Assert.assertTrue(framePage.verifyDragAndDropSuccess());
     }
 }
