@@ -69,18 +69,25 @@ public class BasicAuthPage extends BasePage {
     }
 
     /**
-     * Нажатие на кнопку для отображения изображения.
+     * Нажатие на кнопку для отображения окна с авторизацией и ввод логина и пароля.
+     *
+     * @param username Логин для авторизации.
+     * @param password Пароль для авторизации.
      */
-    @Step("Нажать на кнопку 'Display Image'")
-    public void displayImageClick() {
+    @Step("Нажать на кнопку 'Display Image' и ввести логин '{username}' и пароль '{password}'")
+    public void displayImageClick(String username, String password) {
         buttonDisplay.click();
+        getDriver().switchTo().alert().sendKeys(username);
+        getDriver().switchTo().alert().sendKeys("\t");
+        getDriver().switchTo().alert().sendKeys(password);
+        getDriver().switchTo().alert().accept();
     }
 
     /**
      * Проверяет, отображается ли загруженное окно с авторизацией.
      */
     @Step("Проверить, что окно с авторизацией загружено")
-    public void assertImageDisplayed() {
+    public void imageDisplayed() {
         Assert.assertTrue(downloadImg.isDisplayed());
     }
 }

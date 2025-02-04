@@ -49,4 +49,14 @@ public class MyConfig {
      * Базовый URL для галереи аутентификации HTTPWatch.
      */
     public static final String BASIC_URL = "https://www.httpwatch.com/httpgallery/authentication/#showExample10";
+
+    /**
+     * Имя пользователя для авторизации.
+     */
+    public static final String USERNAME = "httpwatch";
+
+    /**
+     * Пароль для авторизации.
+     */
+    public static final String PASSWORD = "httpwatch";
 }

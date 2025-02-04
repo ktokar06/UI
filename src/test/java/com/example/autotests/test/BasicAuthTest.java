@@ -5,6 +5,9 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.testng.annotations.Test;
 
+import static com.example.autotests.config.MyConfig.PASSWORD;
+import static com.example.autotests.config.MyConfig.USERNAME;
+
 /**
  * Класс для тестирования базовой аутентификации.
  */
@@ -24,7 +27,7 @@ public class BasicAuthTest extends BaseTest {
     public void checkAlertsFunctionality() {
         BasicAuthPage basicAuthPage = new BasicAuthPage(getDriver());
 
-        basicAuthPage.displayImageClick();
-        basicAuthPage.assertImageDisplayed();
+        basicAuthPage.displayImageClick(USERNAME, PASSWORD);
+        basicAuthPage.imageDisplayed();
     }
 }
