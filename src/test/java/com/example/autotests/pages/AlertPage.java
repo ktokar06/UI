@@ -92,9 +92,6 @@ public class AlertPage extends BasePage{
     public boolean isAlertTextPresent() {
         getDriver().switchTo().frame(frameElement);
 
-        boolean alertText = WaitUtils.waitForElementPresence(getDriver(), By.id("demo"));
-
-        getDriver().switchTo().defaultContent();
-        return alertText;
+        return WaitUtils.waitForElementPresence(getDriver(), By.id("demo"));
     }
 }
