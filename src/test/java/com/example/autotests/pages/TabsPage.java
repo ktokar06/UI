@@ -14,17 +14,24 @@ import java.util.ArrayList;
 public class TabsPage extends BasePage {
 
     /**
+     * Локатор для фрейма, содержащего элемент для переноса на другую страницу.
+     */
+    @FindBy(css = "#example-1-tab-1 > div > iframe")
+    private WebElement frameElement;
+
+    /**
      * Кнопка браузера на странице.
      */
-    @FindBy(xpath = "/html/body/div/p/a")
+    @FindBy(css = ".farme_window p a")
     private WebElement buttonBrowser;
 
     /**
      * Конструктор страницы, инициализирующий элементы страницы.
      *
      * @param driver Экземпляр веб-драйвера, необходимый для взаимодействия со страницей.
+     * @param url
      */
-    public TabsPage(WebDriver driver) {
+    public TabsPage(WebDriver driver, String url) {
         super(driver);
     }
 
@@ -51,7 +58,6 @@ public class TabsPage extends BasePage {
      */
     @Step("Открыть браузер")
     public void openBrowser() {
-        WebElement frameElement = getDriver().findElement(By.cssSelector("#example-1-tab-1 > div > iframe"));
         getDriver().switchTo().frame(frameElement);
 
         buttonBrowser.click();
@@ -70,5 +76,17 @@ public class TabsPage extends BasePage {
 
         WebElement linkElement = getDriver().findElement(By.cssSelector("body > div > p > a"));
         linkElement.click();
+    }
+
+    /**
+     * Проверяет, что открыта третья вкладка.
+     *
+     * @return true, если открыто ровно три вкладки, иначе false.
+     */
+    @Step("Проверить, что открыта третья вкладка")
+    public boolean isThirdTabOpened() {
+        ArrayList<String> windows = new ArrayList<>(getDriver().getWindowHandles());
+
+        return windows.size() == 3;
     }
 }
