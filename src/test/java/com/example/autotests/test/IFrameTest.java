@@ -6,8 +6,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.example.autotests.config.MyConfig.URL_IFRAME;
-
 /**
  * Класс для проведения тестов, связанных с работой с iframe.
  */
