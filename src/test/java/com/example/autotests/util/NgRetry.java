@@ -34,6 +34,7 @@ public class NgRetry implements IRetryAnalyzer {
                 return true;
             }
         }
+        System.out.println("Тест провален дважды!");
         return false;
     }
 }

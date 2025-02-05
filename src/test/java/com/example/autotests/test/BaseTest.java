@@ -1,17 +1,13 @@
 package com.example.autotests.test;
 
-import com.example.autotests.util.NgRetry;
 import io.qameta.allure.Step;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.ITestContext;
-import org.testng.ITestNGMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 
 import java.time.Duration;
 
@@ -40,19 +36,11 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get(URL_LOGIN);
-        //driver.get(URL_TITLE);
-    }
-
-    @BeforeSuite
-    public void retry(ITestContext context){
-        for(ITestNGMethod method: context.getAllTestMethods()){
-            method.setRetryAnalyzerClass(NgRetry.class);
-        }
     }
 
     /**
      * Метод, выполняемый после каждого тестового метода.
-     *FailedScreenshot
+     * FailedScreenshot
      * Закрывает браузер и освобождает ресурсы.
      */
     @AfterMethod

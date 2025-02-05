@@ -1,6 +1,7 @@
 package com.example.autotests.test;
 
 import com.example.autotests.pages.LoginPage;
+import com.example.autotests.util.NgRetry;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.testng.annotations.Test;
@@ -17,7 +18,7 @@ public class FailedTest extends BaseTest {
     /**
      * Тест для проверки видимости полей.
      */
-    @Test
+    @Test(priority = 2, retryAnalyzer = NgRetry.class)
     @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Видимость полей")
