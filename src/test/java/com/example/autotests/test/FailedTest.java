@@ -19,7 +19,6 @@ public class FailedTest extends BaseTest {
      * Тест для проверки видимости полей.
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Видимость полей")
     @Story("Авторизация")
