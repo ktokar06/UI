@@ -3,10 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### Allure ###
-.allure
 ### IntelliJ IDEA ###
-.idea
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
