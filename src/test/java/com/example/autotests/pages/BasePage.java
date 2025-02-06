@@ -34,6 +34,7 @@ public class BasePage {
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        jsExecutor = (JavascriptExecutor) driver;
     }
 
     /**
@@ -112,5 +113,23 @@ public class BasePage {
         }
 
         return WaitUtils.waitForElementPresence(driver, By.cssSelector(".elementor-heading-title"));
+    }
+
+    /**
+     * Метод для удаления фокуса из активного элемента.
+     */
+    @Step("Удалить фокус из активного элемента.")
+    public void removeFocus() {
+        jsExecutor.executeScript("document.activeElement.blur();");
+    }
+
+    /**
+     * Метод для проверки наличия скролла на странице.
+     *
+     * @return True, если на странице есть скролл, иначе False.
+     */
+    @Step("Проверить наличие скролла на странице.")
+    public boolean scrollPresent() {
+       return (boolean) jsExecutor.executeScript("return document.body.scrollHeight > window.innerHeight;");
     }
 }
