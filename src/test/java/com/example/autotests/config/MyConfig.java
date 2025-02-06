@@ -6,11 +6,9 @@ package com.example.autotests.config;
 public class MyConfig {
 
     /**
-
      * URL Basic auth.
      */
     public static final String URL_BASIC = "https://www.httpwatch.com/httpgallery/authentication/#showExample10";
-
 
     /**
      * URL страницы входа.
