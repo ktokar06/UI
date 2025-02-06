@@ -28,13 +28,11 @@ public class NgRetry implements IRetryAnalyzer {
     @Override
     public boolean retry(ITestResult result) {
         if (!result.isSuccess()) {
-            System.out.println("Тест упал! Попытка №" + (count + 1));
             if (count < maxCount) {
                 count++;
                 return true;
             }
         }
-        System.out.println("Тест провален дважды!");
         return false;
     }
 }
