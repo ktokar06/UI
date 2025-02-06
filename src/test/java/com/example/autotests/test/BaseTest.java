@@ -12,6 +12,14 @@ import java.time.Duration;
 
 import static com.example.autotests.config.MyConfig.*;
 
+
+import static com.example.autotests.config.MyConfig.*;
+
+import static com.example.autotests.config.MyConfig.URL_TABS;
+import static com.example.autotests.config.MyConfig.URL_IFRAME;
+
+
+
 /**
  * Базовый класс для всех тестов.
  *
@@ -34,7 +42,16 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
         driver.get(URL_ALERT);
+
+        driver.get(URL_BASIC);
+
+
+        driver.get(URL_TABS);
+
+        driver.get(URL_IFRAME);
+
     }
 
     /**
