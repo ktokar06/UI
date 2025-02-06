@@ -17,6 +17,14 @@
 
   <dependencies>
 
+    <!-- WebDriverManager -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.6.2</version>
+    </dependency>
+
+
     <!-- JUnit dependency -->
     <dependency>
       <groupId>junit</groupId>

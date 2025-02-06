@@ -1,5 +1,6 @@
 package com.example.autotests.test;
 
+import com.example.autotests.dataprovider.BrowserDataProvider;
 import com.example.autotests.pages.AlertPage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
@@ -15,7 +16,7 @@ public class AlertTest extends BaseTest {
     /**
      * Test для проверки работы алертов на странице.
      */
-    @Test
+    @Test(dataProvider = "browsers", dataProviderClass = BrowserDataProvider.class)
     @Description("Тестирование функционала алертов на странице")
     @Link(name = "Страница проверяемая тестом", url = "https://way2automation.com/way2auto_jquery/alert.php#load_box")
     @DisplayName("Тестирование алертов")
