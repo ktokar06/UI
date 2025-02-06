@@ -8,9 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
 import java.time.Duration;
 
 import static com.example.autotests.config.MyConfig.*;
+
 
 /**
  * Базовый класс для всех тестов.
@@ -34,12 +36,16 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+        driver.get(URL_LOGIN);
+
         driver.get(URL_ALERT);
+
     }
 
     /**
      * Метод, выполняемый после каждого тестового метода.
-     *FailedScreenshot
+     * FailedScreenshot
      * Закрывает браузер и освобождает ресурсы.
      */
     @AfterMethod

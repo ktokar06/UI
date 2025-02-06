@@ -46,10 +46,21 @@ public class LoginPage extends BasePage {
     /**
      * Возвращает элемент поля для ввода имени пользователя.
      *
+
+     * @param username Имя пользователя для ввода.
+     * @return Эта страница (для цепочки вызовов).
+     */
+    @Step("Заполнить поле 'Имя пользователя' значением '{username}'")
+    public LoginPage setUsername(String username) {
+        this.username.clear();
+        this.username.sendKeys(username);
+        return this;
+
      * @return Элемент поля для ввода имени пользователя.
      */
     public WebElement getUsername() {
         return username;
+
     }
 
     /**
@@ -64,10 +75,21 @@ public class LoginPage extends BasePage {
     /**
      * Возвращает элемент поля для ввода описания имени пользователя.
      *
+
+     * @param password Пароль для ввода.
+     * @return Эта страница (для цепочки вызовов).
+     */
+    @Step("Заполнить поле 'Пароль' значением '{password}'")
+    public LoginPage setPassword(String password) {
+        this.password.clear();
+        this.password.sendKeys(password);
+        return this;
+
      * @return Элемент поля для ввода описания имени пользователя.
      */
     public WebElement getUsernameDescription() {
         return usernameDescription;
+
     }
 
     /**
@@ -82,6 +104,15 @@ public class LoginPage extends BasePage {
     /**
      * Вводит имя пользователя в соответствующее поле.
      *
+
+     * @param description Описание имени пользователя для ввода.
+     * @return Эта страница (для цепочки вызовов).
+     */
+    @Step("Заполнить поле 'Описание пользователя' значением '{description}'")
+    public LoginPage setUsernameDescription(String description) {
+        this.usernameDescription.clear();
+        this.usernameDescription.sendKeys(description);
+
      * @param username Имя пользователя для ввода.
      * @return Эта страница (для цепочки вызовов).
      */
@@ -89,6 +120,7 @@ public class LoginPage extends BasePage {
     public LoginPage setUsername(String username) {
         this.username.clear();
         this.username.sendKeys(username);
+
         return this;
     }
 
@@ -106,6 +138,15 @@ public class LoginPage extends BasePage {
     }
 
     /**
+
+     * Нажимает кнопку для отправки формы входа.
+     *
+     * @return Эта страница (для цепочки вызовов).
+     */
+    @Step("Нажать кнопку 'Login'")
+    public LoginPage setClickLoginButton() {
+        this.submitButton.click();
+
      * Вводит описание имени пользователя в соответствующее поле.
      *
      * @param description Описание имени пользователя для ввода.
