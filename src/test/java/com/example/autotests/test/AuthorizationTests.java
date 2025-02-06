@@ -1,6 +1,5 @@
 package com.example.autotests.test;
 
-import com.example.autotests.pages.HomePage;
 import com.example.autotests.pages.LoginPage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
