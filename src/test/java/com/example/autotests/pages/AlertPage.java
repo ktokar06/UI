@@ -45,7 +45,6 @@ public class AlertPage extends BasePage{
      *
      * @return элемент кнопки ввода алерта
      */
-    @Step("Получить элемент кнопки ввода алерта")
     public WebElement getInputButtonAlert() {
         return inputButtonAlert;
     }
@@ -55,11 +54,18 @@ public class AlertPage extends BasePage{
      *
      * @return элемент кнопки открытия алерт-бокса
      */
-    @Step("Получить элемент кнопки открытия алерт-бокса")
     public WebElement getButtonAlertBox() {
         return buttonAlertBox;
     }
 
+    /**
+     * Возвращает элемент фрейма, который представляет собой часть страницы.
+     *
+     * @return Веб-элемент, представляющий фрейм.
+     */
+    public WebElement getFrameElement() {
+        return frameElement;
+    }
 
     /**
      * Шаг для перехода на кнопку алерта.

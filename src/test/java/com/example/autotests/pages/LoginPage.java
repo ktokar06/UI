@@ -44,6 +44,42 @@ public class LoginPage extends BasePage {
     }
 
     /**
+     * Возвращает элемент поля для ввода имени пользователя.
+     *
+     * @return Элемент поля для ввода имени пользователя.
+     */
+    public WebElement getUsername() {
+        return username;
+    }
+
+    /**
+     * Возвращает элемент поля для ввода пароля.
+     *
+     * @return Элемент поля для ввода пароля.
+     */
+    public WebElement getPassword() {
+        return password;
+    }
+
+    /**
+     * Возвращает элемент поля для ввода описания имени пользователя.
+     *
+     * @return Элемент поля для ввода описания имени пользователя.
+     */
+    public WebElement getUsernameDescription() {
+        return usernameDescription;
+    }
+
+    /**
+     * Возвращает элемент кнопки для отправки формы входа.
+     *
+     * @return Элемент кнопки для отправки формы входа.
+     */
+    public WebElement getSubmitButton() {
+        return submitButton;
+    }
+
+    /**
      * Вводит имя пользователя в соответствующее поле.
      *
      * @param username Имя пользователя для ввода.
@@ -54,16 +90,6 @@ public class LoginPage extends BasePage {
         this.username.clear();
         this.username.sendKeys(username);
         return this;
-    }
-
-    /**
-     * Возвращает элемент поля для ввода имени пользователя.
-     *
-     * @return Элемент поля для ввода имени пользователя.
-     */
-    @Step("Получение элемента поля для ввода имени пользователя")
-    public WebElement getUsername() {
-        return username;
     }
 
     /**
@@ -80,16 +106,6 @@ public class LoginPage extends BasePage {
     }
 
     /**
-     * Возвращает элемент поля для ввода пароля.
-     *
-     * @return Элемент поля для ввода пароля.
-     */
-    @Step("Получение элемента поля для ввода пароля")
-    public WebElement getPassword() {
-        return password;
-    }
-
-    /**
      * Вводит описание имени пользователя в соответствующее поле.
      *
      * @param description Описание имени пользователя для ввода.
@@ -103,16 +119,6 @@ public class LoginPage extends BasePage {
     }
 
     /**
-     * Возвращает элемент поля для ввода описания имени пользователя.
-     *
-     * @return Элемент поля для ввода описания имени пользователя.
-     */
-    @Step("Получение элемента поля для ввода описания имени пользователя")
-    public WebElement getUsernameDescription() {
-        return usernameDescription;
-    }
-
-    /**
      * Нажимает кнопку для отправки формы входа.
      *
      * @return Эта страница (для цепочки вызовов).
@@ -121,15 +127,5 @@ public class LoginPage extends BasePage {
     public LoginPage setClickLoginButton() {
         this.submitButton.click();
         return this;
-    }
-
-    /**
-     * Возвращает элемент кнопки для отправки формы входа.
-     *
-     * @return Элемент кнопки для отправки формы входа.
-     */
-    @Step("Получение элемента кнопки для отправки формы входа")
-    public WebElement getSubmitButton() {
-        return submitButton;
     }
 }
