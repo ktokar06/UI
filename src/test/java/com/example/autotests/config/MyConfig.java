@@ -6,9 +6,19 @@ package com.example.autotests.config;
 public class MyConfig {
 
     /**
+
      * Базовый URL для галереи аутентификации HTTPWatch.
      */
     public static final String URL_BASIC = "https://www.httpwatch.com/httpgallery/authentication/#showExample10";
+
+     * URL IFRAME.
+     */
+
+    public static final String URL_TABS = "http://way2automation.com/way2auto_jquery/frames-and-windows.php";
+  
+    public static final String URL_IFRAME = "http://way2automation.com/way2auto_jquery/droppable.php";
+
+
 
     /**
      * URL страницы входа.
