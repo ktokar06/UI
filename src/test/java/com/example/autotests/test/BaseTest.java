@@ -13,6 +13,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
+import java.net.MalformedURLException;
 import java.time.Duration;
 
 import static com.example.autotests.config.MyConfig.*;
@@ -32,26 +33,36 @@ public class BaseTest {
     /**
      * Метод, выполняемый перед каждым тестовым методом.
      *
-     * Создаёт новый экземпляр веб-драйвера, максимизирует окно браузера и устанавливает время ожидания для поиска элементов.
+     * Этот метод создает новый экземпляр веб-драйвера для указанного браузера,
+     * максимизирует окно браузера и устанавливает время ожидания для поиска элементов.
+     *
+     * @param browser Название браузера, для которого будет создан веб-драйвер.
+     *                Возможные значения: "chrome", "firefox", "ie", "edge".
+     * @throws MalformedURLException Если передается неподдерживаемое значение браузера.
      */
     @BeforeMethod
     @Parameters("browser")
-    public void setUp(String browser) {
+    public void setUp(String browser) throws MalformedURLException {
+        String driverPath = "";
         switch (browser.toLowerCase()) {
             case "chrome":
-                WebDriverManager.chromedriver().setup();
+                driverPath = "C:\\Drivers\\chromedriver.exe";
+                System.setProperty("webdriver.chrome.driver", driverPath);
                 driver = new ChromeDriver();
                 break;
             case "firefox":
-                WebDriverManager.firefoxdriver().setup();
+                driverPath = "C:\\Drivers\\geckodriver.exe";
+                System.setProperty("webdriver.gecko.driver", driverPath);
                 driver = new FirefoxDriver();
                 break;
             case "edge":
-                WebDriverManager.edgedriver().setup();
+                driverPath = "C:\\Drivers\\msedgedriver.exe";
+                System.setProperty("webdriver.edge.driver", driverPath);
                 driver = new EdgeDriver();
                 break;
             case "ie":
-                WebDriverManager.iedriver().setup();
+                driverPath = "C:\\Drivers\\IEDriverServer.exe";
+                System.setProperty("webdriver.ie.driver", driverPath);
                 driver = new InternetExplorerDriver();
                 break;
             default:
