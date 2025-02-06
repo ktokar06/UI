@@ -17,10 +17,9 @@ public class JavaScriptExecutorTest extends BaseTest {
      * Тест для проверки видимости полей и работы с JavaScriptExecutor.
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Видимость полей и работа с JavaScriptExecutor")
-    @Story("Авторизация")
+    @Story("Работа с JavaScriptExecutor")
     @Feature("Проверка видимости полей и работы с JavaScriptExecutor")
     public void javaScriptExecutorTest() {
         LoginPage loginPage = new LoginPage(getDriver());
