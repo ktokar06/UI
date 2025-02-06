@@ -80,7 +80,6 @@ public class TitlePage extends BasePage {
      *
      * @return Заголовок страницы.
      */
-    @Step("Получение заголовка страницы")
     public WebElement getHeader() {
         return header;
     }
@@ -90,7 +89,6 @@ public class TitlePage extends BasePage {
      *
      * @param header Новый заголовок страницы.
      */
-    @Step("Установка заголовка страницы")
     public void setHeader(WebElement header) {
         this.header = header;
     }
@@ -100,7 +98,6 @@ public class TitlePage extends BasePage {
      *
      * @return Навигационная панель страницы.
      */
-    @Step("Получение навигационной панели страницы")
     public WebElement getNavigationBar() {
         return navigationBar;
     }
@@ -110,7 +107,6 @@ public class TitlePage extends BasePage {
      *
      * @param navigationBar Новая навигационная панель страницы.
      */
-    @Step("Установка навигационной панели страницы")
     public void setNavigationBar(WebElement navigationBar) {
         this.navigationBar = navigationBar;
     }
@@ -120,7 +116,6 @@ public class TitlePage extends BasePage {
      *
      * @return Кнопка регистрации.
      */
-    @Step("Получение кнопки регистрации")
     public WebElement getRegistrationButton() {
         return registrationButton;
     }
@@ -130,7 +125,6 @@ public class TitlePage extends BasePage {
      *
      * @param registrationButton Новая кнопка регистрации.
      */
-    @Step("Установка кнопки регистрации")
     public void setRegistrationButton(WebElement registrationButton) {
         this.registrationButton = registrationButton;
     }
@@ -140,7 +134,6 @@ public class TitlePage extends BasePage {
      *
      * @return Список курсов.
      */
-    @Step("Получение списка курсов")
     public WebElement getCourseList() {
         return courseList;
     }
@@ -150,7 +143,6 @@ public class TitlePage extends BasePage {
      *
      * @param courseList Новый список курсов.
      */
-    @Step("Установка списка курсов")
     public void setCourseList(WebElement courseList) {
         this.courseList = courseList;
     }
@@ -160,7 +152,6 @@ public class TitlePage extends BasePage {
      *
      * @return Футер страницы.
      */
-    @Step("Получение футера страницы")
     public WebElement getFooter() {
         return footer;
     }
@@ -170,7 +161,6 @@ public class TitlePage extends BasePage {
      *
      * @param footer Новый футер страницы.
      */
-    @Step("Установка футера страницы")
     public void setFooter(WebElement footer) {
         this.footer = footer;
     }
@@ -180,7 +170,6 @@ public class TitlePage extends BasePage {
      *
      * @return Веб-элемент с контактными данными в хедере.
      */
-    @Step("Получение контактных данных в хедере")
     public WebElement getHeaderContactInfo() {
         return headerContactInfo;
     }
@@ -190,7 +179,6 @@ public class TitlePage extends BasePage {
      *
      * @param headerContactInfo Новые веб-элементы с контактными данными для хедера.
      */
-    @Step("Установка контактных данных в хедере")
     public void setHeaderContactInfo(WebElement headerContactInfo) {
         this.headerContactInfo = headerContactInfo;
     }
@@ -200,7 +188,6 @@ public class TitlePage extends BasePage {
      *
      * @return Кнопка для перехода к следующему курсу.
      */
-    @Step("Получение кнопки для перехода к следующему курсу")
     public WebElement getNextCourseButton() {
         return nextCourseButton;
     }
@@ -210,7 +197,6 @@ public class TitlePage extends BasePage {
      *
      * @param nextCourseButton Новая кнопка для перехода к следующему курсу.
      */
-    @Step("Установка кнопки для перехода к следующему курсу")
     public void setNextCourseButton(WebElement nextCourseButton) {
         this.nextCourseButton = nextCourseButton;
     }
@@ -220,7 +206,6 @@ public class TitlePage extends BasePage {
      *
      * @return Кнопка для перехода к предыдущему курсу.
      */
-    @Step("Получение кнопки для перехода к предыдущему курсу")
     public WebElement getPreviousCourseButton() {
         return previousCourseButton;
     }
@@ -230,7 +215,6 @@ public class TitlePage extends BasePage {
      *
      * @param previousCourseButton Новая кнопка для перехода к предыдущему курсу.
      */
-    @Step("Установка кнопки для перехода к предыдущему курсу")
     public void setPreviousCourseButton(WebElement previousCourseButton) {
         this.previousCourseButton = previousCourseButton;
     }
@@ -240,7 +224,6 @@ public class TitlePage extends BasePage {
      *
      * @return Веб-элемент с контактной информацией в подвале.
      */
-    @Step("Получение элемента с контактной информацией в подвале")
     public WebElement getFooterContactInfo() {
         return footerContactInfo;
     }
@@ -250,7 +233,6 @@ public class TitlePage extends BasePage {
      *
      * @param footerContactInfo Новый веб-элемент с контактной информацией для подвала.
      */
-    @Step("Установка нового элемента с контактной информацией в подвале")
     public void setFooterContactInfo(WebElement footerContactInfo) {
         this.footerContactInfo = footerContactInfo;
     }

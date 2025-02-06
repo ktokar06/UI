@@ -10,7 +10,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import java.time.Duration;
 
+
 import static com.example.autotests.config.MyConfig.URL_LOGIN;
+
+import static com.example.autotests.config.MyConfig.*;
+
 
 /**
  * Базовый класс для всех тестов.
@@ -34,7 +38,11 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
         driver.get(URL_LOGIN);
+
+        driver.get(URL_ALERT);
+
     }
 
     /**
