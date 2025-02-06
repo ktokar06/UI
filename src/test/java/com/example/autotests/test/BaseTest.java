@@ -1,5 +1,6 @@
 package com.example.autotests.test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
@@ -11,9 +12,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import java.net.MalformedURLException;
 import java.time.Duration;
 
 import static com.example.autotests.config.MyConfig.*;
@@ -28,7 +29,7 @@ public class BaseTest {
     /**
      * Веб-драйвер, который используется для управления браузером и выполнения действий на страницах.
      */
-    private static WebDriver driver;
+    private WebDriver driver;
 
     /**
      * Метод, выполняемый перед каждым тестовым методом.
@@ -38,39 +39,34 @@ public class BaseTest {
      *
      * @param browser Название браузера, для которого будет создан веб-драйвер.
      *                Возможные значения: "chrome", "firefox", "ie", "edge".
-     * @throws MalformedURLException Если передается неподдерживаемое значение браузера.
      */
     @BeforeMethod
     @Parameters("browser")
-    public void setUp(String browser) throws MalformedURLException {
-        String driverPath = "";
+    public void setUp(@Optional("chrome") String browser) {
         switch (browser.toLowerCase()) {
             case "chrome":
-                driverPath = "C:\\Drivers\\chromedriver.exe";
-                System.setProperty("webdriver.chrome.driver", driverPath);
+                WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;
             case "firefox":
-                driverPath = "C:\\Drivers\\geckodriver.exe";
-                System.setProperty("webdriver.gecko.driver", driverPath);
+                WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
             case "edge":
-                driverPath = "C:\\Drivers\\msedgedriver.exe";
-                System.setProperty("webdriver.edge.driver", driverPath);
+                WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
                 break;
             case "ie":
-                driverPath = "C:\\Drivers\\IEDriverServer.exe";
-                System.setProperty("webdriver.ie.driver", driverPath);
+                WebDriverManager.iedriver().setup();
                 driver = new InternetExplorerDriver();
                 break;
             default:
                 throw new IllegalArgumentException("Неподдерживаемый браузер: " + browser);
         }
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get(URL_ALERT);
+        driver.get(URL_IFRAME);
     }
 
     /**
