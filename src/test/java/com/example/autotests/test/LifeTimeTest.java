@@ -17,7 +17,6 @@ public class LifeTimeTest extends BaseTest {
      * Проверяет, что переход по ссылке в меню навигации приводит к открытию страницы "Lifetime Membership Club".
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/")
     @DisplayName("Переход по ссылке в меню навигации на страницу Lifetime Membership Club")
     @Story("Главная Страница")

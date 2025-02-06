@@ -1,11 +1,12 @@
 package com.example.autotests.test;
 
-import com.example.autotests.pages.HomePage;
 import com.example.autotests.pages.LoginPage;
+import com.example.autotests.pages.HomePage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import static com.example.autotests.config.MyConfig.*;
 
@@ -20,7 +21,6 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверки видимости полей.
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Видимость полей")
     @Story("Авторизация")
@@ -28,17 +28,19 @@ public class AuthorizationTests extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     public void visibilityCheckTest() {
         LoginPage loginPage = new LoginPage(getDriver());
+        SoftAssert softAssert = new SoftAssert();
 
-        Assert.assertTrue(loginPage.getUsername().isDisplayed());
-        Assert.assertTrue(loginPage.getPassword().isDisplayed());
-        Assert.assertFalse(loginPage.getSubmitButton().isEnabled());
+        softAssert.assertTrue(loginPage.getUsername().isDisplayed());
+        softAssert.assertTrue(loginPage.getPassword().isDisplayed());
+        softAssert.assertFalse(loginPage.getSubmitButton().isEnabled());
+
+        softAssert.assertAll();
     }
 
     /**
      * Тест для проверки авторизации с правильными данными.
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Вход с правильными данными")
     @Story("Авторизация")
@@ -47,10 +49,10 @@ public class AuthorizationTests extends BaseTest {
     public void validCredentialsTest() {
         LoginPage loginPage = new LoginPage(getDriver());
 
-        loginPage.setUsername(VALID_USERNAME);
-        loginPage.setPassword(VALID_PASSWORD);
-        loginPage.setUsernameDescription(VALID_USERNAME_DESCRIPTION);
-        loginPage.setClickLoginButton();
+        loginPage.setUsername(VALID_USERNAME)
+                .setPassword(VALID_PASSWORD)
+                .setUsernameDescription(VALID_USERNAME_DESCRIPTION)
+                .setClickLoginButton();
 
         Assert.assertTrue(loginPage.isLoggedIn(getDriver()), "You're logged in!!");
     }
@@ -59,7 +61,6 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверки авторизации с неправильными данными.
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Вход с неправильными данными")
     @Story("Авторизация")
@@ -68,10 +69,10 @@ public class AuthorizationTests extends BaseTest {
     public void invalidCredentialsTest() {
         LoginPage loginPage = new LoginPage(getDriver());
 
-        loginPage.setUsername(INVALID_USERNAME);
-        loginPage.setPassword(INVALID_PASSWORD);
-        loginPage.setUsernameDescription(INVALID_USERNAME_DESCRIPTION);
-        loginPage.setClickLoginButton();
+        loginPage.setUsername(INVALID_USERNAME)
+                .setPassword(INVALID_PASSWORD)
+                .setUsernameDescription(INVALID_USERNAME_DESCRIPTION)
+                .setClickLoginButton();
 
         Assert.assertTrue(loginPage.isLoggedIn(getDriver()), "Username or password is incorrect");
     }
@@ -80,7 +81,6 @@ public class AuthorizationTests extends BaseTest {
      * Тест для проверка Logout после авторизации в аккаунт.
      */
     @Test
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Выход после входа в аккаунт")
     @Story("Авторизация")
@@ -88,12 +88,13 @@ public class AuthorizationTests extends BaseTest {
     @Severity(SeverityLevel.TRIVIAL)
     public void logoutAfterLoginTest() {
         LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.setUsername(VALID_USERNAME);
-        loginPage.setPassword(VALID_PASSWORD);
-        loginPage.setUsernameDescription(VALID_USERNAME_DESCRIPTION);
-        loginPage.setClickLoginButton();
-
         HomePage homePage = new HomePage(getDriver());
+
+        loginPage.setUsername(VALID_USERNAME)
+                .setPassword(VALID_PASSWORD)
+                .setUsernameDescription(VALID_USERNAME_DESCRIPTION)
+                .setClickLoginButton();
+
         homePage.setLogoutLink();
 
         Assert.assertTrue(loginPage.isLoggedIn(getDriver()));
