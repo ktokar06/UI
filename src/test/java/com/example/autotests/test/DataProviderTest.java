@@ -18,7 +18,6 @@ public class DataProviderTest extends BaseTest{
      * Тест для проверки авторизации с разными данными.
      */
     @Test(dataProvider = "testData", dataProviderClass = DataProviderExample.class)
-    @Issue("---")
     @Link(name = "Страница проверяемая тестом", url = "https://www.way2automation.com/angularjs-protractor/registeration/#/login")
     @DisplayName("Проверка авторизации с разными данными")
     @Story("Авторизация")
