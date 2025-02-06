@@ -4,25 +4,25 @@
     <test name="Chrome Test">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="org.example.test.AuthorizationTests"/>
+            <class name="com.example.autotests.test.AuthorizationTests"/>
         </classes>
     </test>
     <test name="Firefox Test">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="org.example.test.AuthorizationTests"/>
+            <class name="com.example.autotests.test.TitleTest"/>
         </classes>
     </test>
     <test name="Edge Test">
         <parameter name="browser" value="edge"/>
         <classes>
-            <class name="org.example.test.AuthorizationTests"/>
+            <class name="com.example.autotests.test.TabsTest"/>
         </classes>
     </test>
     <test name="IE Test">
         <parameter name="browser" value="ie"/>
         <classes>
-            <class name="org.example.test.AuthorizationTests"/>
+            <class name="com.example.autotests.test.IFrameTest"/>
         </classes>
     </test>
 </suite>
