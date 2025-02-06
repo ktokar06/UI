@@ -1,15 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="MultiThreadSuite" parallel="tests">
-    <test name="Test Suite 1">
+<suite name="MultiBrowserSuite" parallel="tests" thread-count="4">
+    <test name="Chrome Test">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.example.autotests.test.AuthorizationTests"/>
+            <class name="org.example.test.AuthorizationTests"/>
         </classes>
     </test>
-    <test name="Test Suite 2">
-        <parameter name="browser" value="chrome"/>
+    <test name="Firefox Test">
+        <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="com.example.autotests.test.DataProviderTest"/>
+            <class name="org.example.test.AuthorizationTests"/>
+        </classes>
+    </test>
+    <test name="Edge Test">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="org.example.test.AuthorizationTests"/>
+        </classes>
+    </test>
+    <test name="IE Test">
+        <parameter name="browser" value="ie"/>
+        <classes>
+            <class name="org.example.test.AuthorizationTests"/>
         </classes>
     </test>
 </suite>
