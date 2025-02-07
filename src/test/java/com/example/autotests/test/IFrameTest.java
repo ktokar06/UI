@@ -22,7 +22,7 @@ public class IFrameTest extends BaseTest{
     @DisplayName("Перетаскивание элемента")
     @Story("Работа с iframe")
     @Feature("Перетаскивание элемента")
-    public void dragAndDropTest() {
+    public void dragAndDropTest(String browsers) {
         IFramePage framePage = new IFramePage(getDriver());
 
         framePage.dragAndDropElement();
