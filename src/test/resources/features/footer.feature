@@ -1,7 +1,7 @@
 Feature: Проверка футера
 
   Scenario: Отображение контактной информации в футере
-    Given Я открываю главную страницу сайта
+    Given Я открываю главную страницу сайта https://www.way2automation.com/
     Then Футер отображается
     And Он содержит следующие контактные данные:
       | Адрес              | CDR Complex, 3rd Floor, Naya Bans Market, Sector 15, Noida, Near sec-16 Metro Station|
