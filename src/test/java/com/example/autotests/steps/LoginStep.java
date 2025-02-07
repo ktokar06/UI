@@ -18,7 +18,7 @@ public class LoginStep extends BaseTest {
     public void enterCredentials(String credentialsType) {
 
     }
-    @When("Я нажимаю на кнопку")
+    @When("Я нажимаю на кнопку Войти")
     public void clickButton(String buttonText) {
 
     }
