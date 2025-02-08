@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/alerts.feature",
+        features = "src/test/resources/features/login.feature",
         glue = "com.example.autotests.steps"
 )
 public class RunTest{
