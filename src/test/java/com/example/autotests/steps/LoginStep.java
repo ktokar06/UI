@@ -30,12 +30,10 @@ public class LoginStep {
     @When("I click on the {string} button")
     public void i_click_on_the_button(String buttonText) {
         driver.findElement(By.className("btn-danger")).click();
-
     }
 
     @Then("I should see the message {string}")
     public boolean i_should_see_the_message(String expectedMessage) {
         return WaitUtils.waitForElementPresence(driver, By.cssSelector(".ng-scope"));
     }
-
 }
