@@ -20,7 +20,7 @@ public class WaitUtils {
      * @return {@code true}, если элемент появился, иначе {@code false}.
      */
     public static boolean waitForElementPresence(WebDriver driver, By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10000));
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
             return true;

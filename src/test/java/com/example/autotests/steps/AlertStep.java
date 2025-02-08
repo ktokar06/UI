@@ -1,4 +1,4 @@
 package com.example.autotests.steps;
 
-public class FooterStep {
+public class AlertStep {
 }
