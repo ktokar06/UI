@@ -1,6 +1,8 @@
 Feature: Logout
 
-  Scenario: User logs out successfully
-    Given I am logged into the application on the page
-    When I click on the "Logout" button
+  @success
+  Scenario: Successful logout after logging in
+    Given I have opened the page Login
+    When I enter my credentials and log in
+    And I click on the Logout button
     Then I should see the login fields
