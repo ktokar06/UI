@@ -1,7 +1,7 @@
-Feature: Авторизация
+Feature: Login
 
-  Scenario: Пользователь входит с действительными учетными данными
-    Given Я нахожусь на странице входа https://www.way2automation.com/angularjs-protractor/registeration/#/login.
-    When Я ввожу действительные имя пользователя и пароль
-    And Я нажимаю на кнопку "Вход"
-    Then Я должен увидеть сообщение "Вы вошли!!"
+  Scenario: User logs in with valid credentials
+    Given I am on the login page
+    When I enter valid username and password
+    And I click on the "Login" button
+    Then I should see the message "You are logged in!!"

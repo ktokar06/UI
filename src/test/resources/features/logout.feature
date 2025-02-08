@@ -1,6 +1,6 @@
-Feature: Выход из системы
+Feature: Logout
 
-  Scenario: Пользователь выходит из системы успешно
-    Given Я вошел в приложение на странине https://www.way2automation.com/angularjs-protractor/registeration/#/login.
-    When Я нажимаю на кнопку "Выход"
-    Then Я должен увидеть поля для вход
+  Scenario: User logs out successfully
+    Given I am logged into the application on the page
+    When I click on the "Logout" button
+    Then I should see the login fields

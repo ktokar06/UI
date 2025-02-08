@@ -1,8 +1,8 @@
-Feature: Переход между страницами через навигационное меню
+Feature: Navigation between pages via the navigation menu
 
-  Scenario: Навигация на страницу "Клуб пожизненного членства"
-    Given Я открываю главную страницу сайта https://www.way2automation.com/
-    When Я нажимаю на блок "Все курсы"
-    When Я выбираю в этом блоке пункт "Пожизненное членство"
-    Then Я проверяю, что был перенаправлен на URL "https://way2automation.com/lifetime-membership-club/"
-    And Заголовок содержит текст "Клуб пожизненного членства"
+  Scenario: Navigation to the "Lifetime Membership Club" page
+    Given I open the homepage of the website
+    When I click on the "All Courses" block
+    And I select the "Lifetime Membership" option in this block
+    Then I verify that I am redirected to the URL "https://way2automation.com/lifetime-membership-club/"
+    And The page title contains the text "Lifetime Membership Club"

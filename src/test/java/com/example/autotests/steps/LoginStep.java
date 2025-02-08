@@ -1,27 +1,35 @@
 package com.example.autotests.steps;
 
-import com.example.autotests.test.BaseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import static com.example.autotests.config.MyConfig.*;
 
-public class LoginStep extends BaseTest {
+public class LoginStep {
 
-    @Given("Я нахожусь на странице входа")
-    public void navigateToLoginPage() {
+    private WebDriver driver;
+
+    @Given("I am on the login page")
+    public void i_am_on_the_login_page(){
+        driver = new ChromeDriver();
+        driver.get(URL_LOGIN);
+
     }
 
-    @When("Я ввожу имя пользователя и пароль")
-    public void enterCredentials(String credentialsType) {
-
-    }
-    @When("Я нажимаю на кнопку Войти")
-    public void clickButton(String buttonText) {
+    @When("I enter valid username and password")
+    public void i_enter_valid_username_and_password() {
 
     }
 
-    @Then("Я должен увидеть сообщение")
-    public void verifyMessage(String expectedMessage) {
+    @When("I click on the {string} button")
+    public void i_click_on_the_button(String b) {
+
+    }
+
+    @Then("I should see the message {string}")
+    public void i_should_see_the_message(String string) {
 
     }
 }
