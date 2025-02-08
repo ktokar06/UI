@@ -20,15 +20,19 @@ public class LoginStep {
     }
 
     @When("I enter valid username and password")
-    public void i_enter_valid_username_and_password() {
-        driver.findElement(By.id("username")).sendKeys(USERNAME);
-        driver.findElement(By.id("password")).sendKeys(PASSWORD);
+    public void i_enter_valid_username_and_password() throws InterruptedException {
+        Thread.sleep(5000);
+        driver.findElement(By.id("username")).sendKeys(VALID_USERNAME);
+        driver.findElement(By.id("password")).sendKeys(VALID_PASSWORD);
+        driver.findElement(By.id("formly_1_input_username_0")).sendKeys(VALID_USERNAME_DESCRIPTION);
     }
+
     @When("I click on the {string} button")
     public void i_click_on_the_button(String buttonText) {
         driver.findElement(By.className("btn-danger")).click();
 
     }
+
     @Then("I should see the message {string}")
     public boolean i_should_see_the_message(String expectedMessage) {
         return WaitUtils.waitForElementPresence(driver, By.cssSelector(".ng-scope"));
