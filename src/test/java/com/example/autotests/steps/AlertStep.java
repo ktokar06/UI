@@ -63,8 +63,7 @@ public class AlertStep {
      * @throws InterruptedException если возникает ошибка при ожидании
      */
     @When("I enter text into the alert")
-    public void i_enter_text_into_the_alert() throws InterruptedException {
-        Thread.sleep(5000);
+    public void i_enter_text_into_the_alert(){
 
         inputButtonAlert.click();
 

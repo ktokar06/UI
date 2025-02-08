@@ -75,8 +75,7 @@ public class LogoutStep {
      * @throws InterruptedException Если произошло прерывание потока.
      */
     @When("I enter my credentials and log in")
-    public void i_enter_my_credentials_and_log_in() throws InterruptedException {
-        Thread.sleep(5000);
+    public void i_enter_my_credentials_and_log_in() {
         username.sendKeys(VALID_USERNAME);
         password.sendKeys(VALID_PASSWORD);
         usernameDescription.sendKeys(VALID_USERNAME_DESCRIPTION);
@@ -87,8 +86,7 @@ public class LogoutStep {
      * Нажимает на кнопку выхода из системы.
      */
     @And("I click on the Logout button")
-    public void i_click_on_the_logout_button() throws InterruptedException {
-        Thread.sleep(5000);
+    public void i_click_on_the_logout_button() {
         logoutLink.click();
     }
 
