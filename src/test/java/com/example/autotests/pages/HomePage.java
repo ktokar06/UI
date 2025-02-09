@@ -26,20 +26,19 @@ public class HomePage extends BasePage {
     }
 
     /**
+     * Возвращает элемент ссылки для выхода из системы.
+     *
+     * @return Элемент ссылки для выхода из системы.
+     */
+    public WebElement getLogoutLink() {
+        return logoutLink;
+    }
+
+    /**
      * Нажатие на ссылку для выхода из системы.
      */
     @Step("Нажать на кнопку 'Logout'")
     public void setLogoutLink() {
         this.logoutLink.click();
-    }
-
-    /**
-     * Возвращает элемент ссылки для выхода из системы.
-     *
-     * @return Элемент ссылки для выхода из системы.
-     */
-    @Step("Получение элемента ссылки для выхода из системы")
-    public WebElement getLogoutLink() {
-        return logoutLink;
     }
 }

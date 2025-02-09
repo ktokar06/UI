@@ -10,6 +10,26 @@ public class MyConfig {
      */
     public static final String URL_COOKIE = "https://www.sql-ex.ru/";
 
+     /**
+     * URL страницы с алертами.
+     */
+    public static final  String URL_ALERT = "http://way2automation.com/way2auto_jquery/alert.php";
+
+    /**
+     * Базовый URL для галереи аутентификации HTTPWatch.
+     */
+    public static final String URL_BASIC = "https://www.httpwatch.com/httpgallery/authentication/#showExample10";
+
+     /**
+     * URL TABS.
+     */
+    public static final String URL_TABS = "http://way2automation.com/way2auto_jquery/frames-and-windows.php";
+
+    /**
+     * URL IFRAME.
+     */
+    public static final String URL_IFRAME = "http://way2automation.com/way2auto_jquery/droppable.php";
+
     /**
      * URL страницы входа.
      */
@@ -59,4 +79,14 @@ public class MyConfig {
      * Валидный пароль пользователя для входа.
      */
     public static final String COOKIE_VALID_PASSWORD = "123456789";
+  
+     /**
+     * Имя пользователя для авторизации.
+     */
+    public static final String USERNAME = "httpwatch";
+
+    /**
+     * Пароль для авторизации.
+     */
+    public static final String PASSWORD = "httpwatch";
 }
