@@ -8,6 +8,11 @@ public class MyConfig {
     /**
      * URL страницы входа.
      */
+    public static final String URL_COOKIE = "https://www.sql-ex.ru/";
+
+    /**
+     * URL страницы входа.
+     */
     public static final String URL_LOGIN = "https://www.way2automation.com/angularjs-protractor/registeration/#/login";
 
     /**
@@ -44,4 +49,14 @@ public class MyConfig {
      * Описание невалидного пользователя.
      */
     public static final String INVALID_USERNAME_DESCRIPTION = "description";
+
+    /**
+     * Валидное имя пользователя для входа.
+     */
+    public static final String COOKIE_VALID_USERNAME = "zegwaer";
+
+    /**
+     * Валидный пароль пользователя для входа.
+     */
+    public static final String COOKIE_VALID_PASSWORD = "123456789";
 }
