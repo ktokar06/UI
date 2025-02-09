@@ -6,7 +6,7 @@ package com.example.autotests.config;
 public class MyConfig {
 
     /**
-     * URL страницы входа.
+     * Cookie URL страницы входа.
      */
     public static final String URL_COOKIE = "https://www.sql-ex.ru/";
 
