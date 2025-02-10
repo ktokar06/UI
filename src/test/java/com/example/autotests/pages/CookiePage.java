@@ -13,6 +13,8 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 /**
@@ -142,24 +144,19 @@ public class CookiePage extends BasePage {
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
+
+            Map<String, String> cookieMap = new HashMap<>();
+
             while ((line = bufferedReader.readLine()) != null) {
                 StringTokenizer tokenizer = new StringTokenizer(line, ";");
                 String name = tokenizer.nextToken();
                 String value = tokenizer.nextToken();
-                String domain = tokenizer.nextToken();
-                String path = tokenizer.nextToken();
-                Date expiry = null;
-                String expiryString = tokenizer.nextToken();
-                if (!expiryString.equals("null")) {
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy");
-                    LocalDateTime localDateTime = LocalDateTime.parse(expiryString, formatter);
-                    ZoneId zoneId = ZoneId.systemDefault();
-                    expiry = Date.from(localDateTime.atZone(zoneId).toInstant());
-                }
-                boolean isSecure = Boolean.parseBoolean(tokenizer.nextToken());
-                Cookie cookie = new Cookie(name, value, domain, path, expiry, isSecure);
-                getDriver().manage().addCookie(cookie);
+
+                cookieMap.put(name, value);
             }
+
+            cookieMap.forEach((name, value) -> getDriver().manage().addCookie(new Cookie(name, value)));
+
             bufferedReader.close();
             fileReader.close();
         } catch (IOException e) {
@@ -172,7 +169,6 @@ public class CookiePage extends BasePage {
      */
     @Step("Обновить страницу после загрузки куки.")
     public void refreshPage() {
-        JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        js.executeScript("location.reload();");
+        getDriver().navigate().refresh();
     }
 }
