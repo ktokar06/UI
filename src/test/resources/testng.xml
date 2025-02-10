@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MultiThreadSuite" parallel="tests" thread-count="2">
+    <test name="Test Suite 1">
+        <classes>
+            <class name="com.example.autotests.test.AuthorizationTests"/>
+        </classes>
+    </test>
+    <test name="Test Suite 2">
+        <classes>
+            <class name="com.example.autotests.test.DataProviderTest"/>
+        </classes>
+    </test>
+</suite>
