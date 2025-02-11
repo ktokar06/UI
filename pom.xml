@@ -17,11 +17,18 @@
 
   <dependencies>
 
+    <!-- WebDriverManager dependency -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.6.1</version>
+    </dependency>
+
     <!-- JUnit dependency -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.13.1</version>
     </dependency>
 
     <dependency>
@@ -81,6 +88,19 @@
       <artifactId>junit-dataprovider</artifactId>
       <version>1.13.1</version>
       <scope>test</scope>
+    </dependency>
+
+    <!-- Cucumber -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>7.21.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>7.21.0</version>
     </dependency>
 
   </dependencies>
