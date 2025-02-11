@@ -91,6 +91,16 @@ public class BasePage {
     }
 
     /**
+     * Проверяет, выполнен ли успешный вход в систему.
+     *
+     * @return {@code true}, если пользователь успешно вошел в систему, иначе {@code false}.
+     */
+    @Step("Проверить, выполнен ли успешный вход в систему")
+    public boolean isCookieLoggedIn(WebDriver driver) {
+        return WaitUtils.waitForElementPresence(driver, By.xpath("/html/body/table[1]/tbody/tr/td[3]"));
+    }
+
+    /**
      * Проверяет, что страница "Lifetime Membership Club" доступна и загружена правильно.
      *
      * @param driver Веб-драйвер, используемый для управления браузером.

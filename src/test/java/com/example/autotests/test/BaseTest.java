@@ -66,7 +66,7 @@ public class BaseTest {
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get(URL_IFRAME);
+        driver.get(URL_COOKIE);
     }
 
     /**
