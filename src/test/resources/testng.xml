@@ -3,8 +3,6 @@
 <suite name="MultiBrowserSuite" parallel="tests" thread-count="4">
     <test name="Chrome Test">
         <parameter name="browser" value="chrome"/>
-<suite name="MultiThreadSuite" parallel="tests" thread-count="2">
-    <test name="Test Suite 1">
         <classes>
             <class name="com.example.autotests.test.AuthorizationTests"/>
         </classes>
