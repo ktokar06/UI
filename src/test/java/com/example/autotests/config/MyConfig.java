@@ -6,6 +6,11 @@ package com.example.autotests.config;
 public class MyConfig {
 
     /**
+     * Cookie URL страницы входа.
+     */
+    public static final String URL_COOKIE = "https://www.sql-ex.ru/";
+
+     /**
      * URL страницы с алертами.
      */
     public static final  String URL_ALERT = "http://way2automation.com/way2auto_jquery/alert.php";
@@ -66,6 +71,16 @@ public class MyConfig {
     public static final String INVALID_USERNAME_DESCRIPTION = "description";
 
     /**
+     * Валидное имя пользователя для входа.
+     */
+    public static final String COOKIE_VALID_USERNAME = "zegwaer";
+
+    /**
+     * Валидный пароль пользователя для входа.
+     */
+    public static final String COOKIE_VALID_PASSWORD = "123456789";
+  
+     /**
      * Имя пользователя для авторизации.
      */
     public static final String USERNAME = "httpwatch";
